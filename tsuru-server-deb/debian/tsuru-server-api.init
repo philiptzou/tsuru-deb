@@ -1,42 +1,46 @@
 #!/bin/sh
 
 ### BEGIN INIT INFO
-# Provides:	  hipache
+# Provides:	  tsuru-server-api
 # Required-Start:    $local_fs $remote_fs $network $syslog $named
 # Required-Stop:     $local_fs $remote_fs $network $syslog $named
 # Default-Start:     2 3 4 5
 # Default-Stop:      0 1 6
-# Short-Description: starts the hipache web server
-# Description:       starts hipache using start-stop-daemon
+# Short-Description: starts the tsuru-server-api
+# Description:       starts tsuru-server-api using start-stop-daemon
 ### END INIT INFO
 
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-NAME=hipache
-DESC=hipache
-PID=/var/run/hipache.pid
-NODEJS=$(command -v nodejs || command -v node)
+NAME=tsuru-server-api
+DESC=tsuru-server-api
+PID=/var/run/tsuru-server-api.pid
+USER=tsuru
+GROUP=tsuru
+DAEMON=/usr/bin/tsr
+CONFIG_FILE="/etc/tsuru/tsuru.conf"
+TSR_API_ENABLED=yes
 
-if [ -x /usr/bin/hipache ]; then
-    DAEMON=/usr/bin/hipache
-elif [ -x /usr/local/bin/hipache ]; then
-    DAEMON=/usr/local/bin/hipache
-else
-    exit 0
+test -x $DAEMON || exit 0
+
+# Include tsuru-server-api defaults if available
+if [ -r /etc/default/tsuru-server ]; then
+	. /etc/default/tsuru-server
 fi
 
-# Include hipache defaults if available
-if [ -r /etc/default/hipache ]; then
-	. /etc/default/hipache
+if [ "$TSR_API_ENABLED" != "yes" ]; then
+    exit 0
 fi
 
 . /lib/init/vars.sh
 . /lib/lsb/init-functions
 
-# Check if the ULIMIT is set in /etc/default/hipache
+# Check if the ULIMIT is set in /etc/default/tsuru-server-api
 if [ -n "$ULIMIT" ]; then
 	# Set the ulimits
 	ulimit $ULIMIT
 fi
+
+DAEMON_OPTS="api --config=$CONFIG_FILE"
 
 #
 # Function that starts the daemon/service
@@ -48,7 +52,7 @@ do_start()
 	#   1 if daemon was already running
 	#   2 if daemon could not be started
 	start-stop-daemon --start --quiet --pidfile $PID --make-pidfile --background \
-		--exec $NODEJS --test > /dev/null || return 1
+		--exec $DAEMON --test > /dev/null || return 1
 	start-stop-daemon --start --quiet --pidfile $PID --make-pidfile --background \
 		--exec $DAEMON -- $DAEMON_OPTS 2>/dev/null || return 2
 }
