@@ -1,3 +1,9 @@
+tsuru-admin (0.4.3-1) unstable; urgency=low
+
+  * Change distribution to unstable
+
+ -- Philip Tzou <philip.npc@gmail.com>  Tue, 15 Jul 2014 03:45:50 +0000
+
 tsuru-admin (0.4.3-0~precise1) precise; urgency=medium
 
   * First release of the deb package, following our new packaging pattern.

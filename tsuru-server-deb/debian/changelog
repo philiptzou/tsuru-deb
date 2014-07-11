@@ -1,3 +1,9 @@
+tsuru-server (0.5.3-1) unstable; urgency=low
+
+  * Change distribution to unstable
+
+ -- Phlip Tzou <philip.npc@gmail.com>  Sun, 03 Aug 2014 07:04:46 +0000
+
 tsuru-server (0.5.3-0~precise1) precise; urgency=high
 
   * New upstream release, fixing leak of connections to Redis when used as queue 
