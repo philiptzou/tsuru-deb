@@ -1,3 +1,9 @@
+tsuru-client (0.11.0-2) unstable; urgency=low
+
+  * Change distribution to unstable
+
+ -- Phlip Tzou <philip.npc@gmail.com>  Thu, 07 Aug 2014 02:27:59 +0000
+
 tsuru-client (0.11.0-1~precise1) precise; urgency=low
 
   * New upstream release

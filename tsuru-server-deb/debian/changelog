@@ -1,3 +1,9 @@
+tsuru-server (0.6.0-1) unstable; urgency=low
+
+  * Change distribution to unstable
+
+ -- Phlip Tzou <philip.npc@gmail.com>  Thu, 07 Aug 2014 03:33:51 +0000
+
 tsuru-server (0.6.0-0~precise1) precise; urgency=medium
 
   * New upstream release
