@@ -1,3 +1,9 @@
+tsuru-node-agent (0.1-1) unstable; urgency=low
+
+  * Change distribution to unstable.
+
+ -- Phlip Tzou <philip.npc@gmail.com>  Mon, 14 Jul 2014 07:08:54 +0000
+
 tsuru-node-agent (0.1-0ubuntu1ppa3~precise1) precise; urgency=medium
 
   * Change default and upstart vars to something more meaningfully
