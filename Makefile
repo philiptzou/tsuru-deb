@@ -19,6 +19,14 @@ else
 	debsign_opt := ""
 endif
 
+buildsfx := $(BUILDSUFFIX_$(VERSION))
+builddist := $(VERSION)
+buildtext := $(BUILDTEXT_$(VERSION))
+
+ifdef BUILDDIST_$(VERSION)
+	builddist := $(BUILDDIST_$(VERSION))
+endif
+
 all:
 	@exit 0
 
@@ -59,10 +67,58 @@ clean:
 
 build-deps: .build-deps .install-godep
 
-.builder-wheezy:
-	@rm /tmp/ppa.sh 2>/dev/null || true
-	@echo "/usr/bin/apt-get update" >> /tmp/ppa.sh
-	@touch $@
+_distributions:
+	echo "Origin: tsuru-deb" >> localrepo.tmp/conf/distributions
+	echo "Label: tsuru-deb" >> localrepo.tmp/conf/distributions
+	echo "Codename: $(builddist)" >> localrepo.tmp/conf/distributions
+	echo "Architectures: i386 amd64 source" >> localrepo.tmp/conf/distributions
+	echo "Components: main contrib" >> localrepo.tmp/conf/distributions
+	echo "UDebComponents: main contrib" >> localrepo.tmp/conf/distributions
+	echo "Description: tsuru-deb local repository" >> localrepo.tmp/conf/distributions
+	echo "SignWith: yes" >> localrepo.tmp/conf/distributions
+	echo >> localrepo.tmp/conf/distributions
+
+localrepo:
+	# Creating a local APT repository...
+	# based on http://joseph.ruscio.org/blog/2010/08/19/setting-up-an-apt-repository/
+	# thanks to Joseph Ruuscio
+	@if [ ! $(GPGID) ]; then \
+		echo 'Specify your GPG id/email in `variables.local.mk`:' >&2; \
+		echo 'GPGID = [GPG id|GPG email]' >&2; \
+		echo >&2; \
+		echo 'You can generate your own GPG key with gnupg:' >&2; \
+		echo '$$ sudo apt-get install gnupg' >&2; \
+		echo '$$ gpg --gen-key' >&2; \
+		exit 1; \
+	fi
+	sudo apt-get update -qq
+	sudo apt-get install reprepro gnupg -y
+	@rm -rf $@.tmp 2>/dev/null || true
+	@mkdir -p $@.tmp/conf
+	@set -e; \
+	for version in $(VERSIONS); do \
+		make VERSION=$$version _distributions; \
+	done
+	@echo "verbose" >> $@.tmp/conf/options
+	@echo "ask-passphrase" >> $@.tmp/conf/options
+	@echo "basedir ." >> $@.tmp/conf/options
+	@gpg --armor --output $@.tmp/public.key --export $(GPGID)
+	@cd $@.tmp && reprepro export
+	@mv $@.tmp $@
+
+_builder_wheezy:
+	@rm /tmp/repo.sh 2>/dev/null || true
+	@echo "apt-get update -qq" > /tmp/repo.sh
+	@echo "apt-get install apt-utils -y" >> /tmp/repo.sh
+	@echo "echo 'deb file://$(abspath localrepo) $(builddist) main' > /etc/apt/sources.list.d/local_$(builddist).list" >> /tmp/repo.sh
+	@echo "echo 'deb-src file://$(abspath localrepo) $(builddist) main' >> /etc/apt/sources.list.d/local_$(builddist).list" >> /tmp/repo.sh
+	@echo "cat $(abspath localrepo)/public.key | apt-key add -" >> /tmp/repo.sh
+	@set -e; \
+	export MIRRORSITE=$(MIRROR_$(VERSION)); \
+	export OTHERMIRROR=$(OTHERMIRROR_$(VERSION)); \
+	cowbuilder-dist $(VERSION) execute --bindmounts $(abspath localrepo) --save --override-config --updates-only /tmp/repo.sh; \
+	cowbuilder-dist $(VERSION) update --bindmounts $(abspath localrepo) --override-config --updates-only
+	@rm /tmp/repo.sh 2>/dev/null || true
 
 .builder-precise .builder-saucy .builder-trusty:
 	@rm /tmp/ppa.sh 2>/dev/null || true
@@ -72,29 +128,56 @@ build-deps: .build-deps .install-godep
 	@echo "/usr/bin/add-apt-repository -y ppa:tsuru/lvm2" >> /tmp/ppa.sh
 	@echo "/usr/bin/add-apt-repository -y ppa:tsuru/golang" >> /tmp/ppa.sh
 	@echo "/usr/bin/add-apt-repository -y ppa:tsuru/docker" >> /tmp/ppa.sh
-	@export MIRRORSITE=$(MIRROR_$(DIST)); \
-	export OTHERMIRROR=$(OTHERMIRROR_$(DIST)); \
-	cowbuilder-dist $(DIST) execute --save --override-config --updates-only /tmp/ppa.sh; \
-	cowbuilder-dist $(DIST) update --override-config --updates-only
+	@set -e; \
+	export MIRRORSITE=$(MIRROR_$(VERSION)); \
+	export OTHERMIRROR=$(OTHERMIRROR_$(VERSION)); \
+	cowbuilder-dist $(VERSION) execute --save --override-config --updates-only /tmp/ppa.sh; \
+	cowbuilder-dist $(VERSION) update --override-config --updates-only
 	@rm /tmp/ppa.sh 2>/dev/null || true
 	@touch $@
 
 .builder-create:
-	@export MIRRORSITE=$(MIRROR_$(DIST)); \
-	export OTHERMIRROR=$(OTHERMIRROR_$(DIST)); \
-	cowbuilder-dist $(DIST) create --updates-only || true
-	make DIST=$(DIST) .builder-$(DIST)
+	@export MIRRORSITE=$(MIRROR_$(VERSION)); \
+	export OTHERMIRROR=$(OTHERMIRROR_$(VERSION)); \
+	cowbuilder-dist $(VERSION) create --updates-only || true
+	make VERSION=$(VERSION) .builder-$(VERSION)
 
 builder:
-	@for version in $(VERSIONS); do \
-		make DIST=$$version .builder-create; \
+	@set -e; \
+	for version in $(VERSIONS); do \
+		make VERSION=$$version .builder-create; \
 	done
 
 build:
+	@set -e; \
 	for version in $(VERSIONS); do \
-	    cowbuilder-dist $$version build *$${version}*.dsc; \
+	    cowbuilder-dist $$version build $(TMP)*$${version}*.dsc; \
 	done
-	
+
+_buildd: localrepo
+	@mkdir -p $(TMP)debs
+	@rm $(TMP)debs/$(TARGET)-$(VERSION) 2>/dev/null || true
+	@set -e; \
+	export MIRRORSITE=$(MIRROR_$(VERSION)); \
+	export OTHERMIRROR=$(OTHERMIRROR_$(VERSION)); \
+	cowbuilder-dist $(VERSION) update --bindmounts $(abspath localrepo) --override-config --updates-only; \
+	cowbuilder-dist $(VERSION) build $(TMP)$(TARGET)_*$(BUILDSUFFIX_$(VERSION))*.dsc --buildresult=$(TMP)debs/$(TARGET)-$(VERSION) --debbuildopts="-sa" --bindmounts $(abspath localrepo)
+
+_register: localrepo
+	#cd localrepo && ls $(abspath $(TMP))/$(TARGET)_*$(BUILDSUFFIX_$(VERSION))*.dsc | xargs --verbose -L 1 reprepro includedsc $(builddist)
+	cd localrepo && ls $(abspath $(TMP))/debs/$(TARGET)-$(VERSION)/*.changes | xargs --verbose -L 1 reprepro include $(builddist)
+
+tsuru-server.buildd serf.buildd gandalf-server.buildd archive-server.buildd : golang.buildd
+hipache-hchecker.buildd docker-registry.buildd tsuru-mongoapi.buildd: golang.buildd
+crane.buildd tsuru-client.buildd tsuru-admin.buildd: golang.buildd
+%.buildd:
+	make $(subst .buildd,,$@)
+	set -e; \
+	for version in $(VERSIONS); do \
+		make VERSION=$$version TARGET=$(subst .buildd,,$@) _buildd _register; \
+	done
+	touch $@
+
 upload:
 	if [ ! $(PPA) ]; then echo "PPA var must be set to upload packages... specify the PPA=<value> in ./variables"; exit 1; fi
 	eval $$(gpg-agent --daemon) && for file in *.changes; do debsign $(debsign_opt) $$file; done; unset file
@@ -112,14 +195,6 @@ _post_tarball:
 	popd && tar zcvf $(TARGET)_$${TAG}.orig.tar.gz $(TARGET)-$$TAG
 	@rm -rf $(TARGET)-$$TAG
 
-buildsfx := $(BUILDSUFFIX_$(VERSION))
-builddist := $(VERSION)
-buildtext := $(BUILDTEXT_$(VERSION))
-
-ifdef BUILDDIST_$(VERSION)
-	builddist := $(BUILDDIST_$(VERSION))
-endif
-
 _build:
 	@cp $(CWD)/debian/changelog /tmp/$(TARGET).changelog.orig
 	@cd $(CWD); DEBEMAIL=$(DEBEMAIL) DEBFULLNAME=$(DEBFULLNAME) dch -l $(buildsfx) -D $(builddist) $(buildtext)
@@ -128,13 +203,14 @@ _build:
 	@mv /tmp/$(TARGET).changelog.orig $(CWD)/debian/changelog
 
 _do:
-	@for version in $(VERSIONS); do \
+	@set -e; \
+	for version in $(VERSIONS); do \
 		for exp in $$EXCEPT; do \
 			if [ "$$version" == "$$exp" ]; then \
 				ignore_version=1 ; \
 			fi ; \
 		done ; \
-		[[ $$ignore_version != 1 ]] && make VERSION=$$version TARGET=$(TARGET) CWD=tmp/$(TARGET) _build ; \
+		[[ $$ignore_version != 1 ]] && make VERSION=$$version TARGET=$(TARGET) CWD=$(TMP)$(TARGET) _build ; \
 		unset ignore_version; \
 	done
 
@@ -154,20 +230,16 @@ PACKAGES_$(GOBASE)tsuru-server-$(TAG_tsuru-server) := github.com/tsuru/tsuru/...
 
 $(GOBASE)%:
 	mkdir -p $(GOBASE)
-	GOPATH=$@ go get -v -u -d $(or $(GOURL), $(GITPATH)/...)
-	rm $@ 2>/dev/null || true
-	git -C $@/src/$(GITPATH) checkout $(or $(GITTAG), $(TAG))
-	if [[ -d $@/src/$(GITPATH)/Godeps ]]; then \
-		cd $@/src/$(GITPATH); \
-		GOPATH=$(abspath $@) godep restore ./...; \
+	rm -rf $@.tmp 2>/dev/null || true
+	GOPATH=$@.tmp go get -v -u -d $(or $(GOURL), $(GITPATH)/...)
+	git -C $@.tmp/src/$(GITPATH) checkout $(or $(GITTAG), $(TAG))
+	if [[ -d $@.tmp/src/$(GITPATH)/Godeps ]]; then \
+		cd $@.tmp/src/$(GITPATH); \
+		GOPATH=$(abspath $@.tmp) godep restore ./...; \
 	fi
-
-$(NODEBASE)%:
-	mkdir -p $(NODEBASE)
-
+	mv $@.tmp $@
 
 tsuru-server_$(TAG_tsuru-server).orig.tar.gz: $(GOBASE)tsuru-server-$(TAG_tsuru-server)
-tsuru-node-agent_$(TAG_tsuru-node-agent).orig.tar.gz: $(GOBASE)tsuru-node-agent-$(TAG_tsuru-node-agent)
 serf_$(TAG_serf).orig.tar.gz: $(GOBASE)serf-$(TAG_serf)
 gandalf-server_$(TAG_gandalf-server).orig.tar.gz: $(GOBASE)gandalf-server-$(TAG_gandalf-server)
 archive-server_$(TAG_archive-server).orig.tar.gz: $(GOBASE)archive-server-$(TAG_archive-server)
@@ -198,11 +270,6 @@ tsuru-server: GITPATH = github.com/tsuru/tsuru
 tsuru-server: $(GOBASE)tsuru-server-$(TAG_tsuru-server)
 tsuru-server: tsuru-server_$(TAG_tsuru-server).orig.tar.gz
 tsuru-server: TAR_OPTIONS := --exclude tsuru-server-$(TAG_tsuru-server)/src/github.com/tsuru/tsuru/src
-tsuru-node-agent: TAG := $(TAG_tsuru-node-agent)
-tsuru-node-agent: TARGET = tsuru-node-agent
-tsuru-node-agent: GITPATH = github.com/tsuru/tsuru-node/agent
-tsuru-node-agent: tsuru-node-agent_$(TAG_tsuru-node-agent).orig.tar.gz
-tsuru-node-agent: TAR_OPTIONS := --exclude tsuru-node-agent-$(TAG_tsuru-node-agent)/src/github.com/tsuru/tsuru-node-agent/src
 serf: TAG := $(TAG_serf)
 serf: GITTAG := v$(TAG_serf)
 serf: TARGET = serf
@@ -254,12 +321,11 @@ lxc-docker: lxc-docker_$(TAG_lxc-docker).orig.tar.gz
 lvm2: lvm2_$(TAG_lvm2).orig.tar.gz
 btrfs-tools: btrfs-tools_$(TAG_btrfs-tools).orig.tar.xz
 golang: golang_$(TAG_golang).orig.tar.gz
-tsuru-server tsuru-node-agent serf gandalf-server archive-server crane tsuru-client tsuru-admin hipache-hchecker docker-registry tsuru-mongoapi lxc-docker lvm2 btrfs-tools golang nodejs node-hipache:
+tsuru-server serf gandalf-server archive-server crane tsuru-client tsuru-admin hipache-hchecker docker-registry tsuru-mongoapi lxc-docker lvm2 btrfs-tools golang nodejs node-hipache:
 	mkdir -p $(TMP)$@/
 	rm -rf $(TMP)$@/* || true
 	cp -r $@-deb/* $(TMP)$@/
-	-cp $< $(TMP)
+	-cp $@_$(TAG_$@).orig.tar.gz $(TMP)
 	make TARGET=$@ _do
 
-
-#nodejs: nodejs_$(TAG_nodejs).orig.tar.gz
+srcpkgs: tsuru-server serf gandalf-server archive-server crane tsuru-client tsuru-admin hipache-hchecker docker-registry tsuru-mongoapi lxc-docker lvm2 golang node-hipache

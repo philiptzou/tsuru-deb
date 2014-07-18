@@ -20,7 +20,6 @@ DEBEMAIL = philip.npc@gmail.com
 DEBFULLNAME = "Philip Tzou"
 
 TAG_tsuru-server=0.5.2
-TAG_tsuru-node-agent=0.1
 TAG_serf=0.4.1
 TAG_gandalf-server=0.4.1
 TAG_archive-server=0.1.0

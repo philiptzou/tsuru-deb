@@ -19,3 +19,6 @@ tmp
 .install-*
 .download-*
 godeb
+*.buildd
+variables.local.mk
+localrepo
