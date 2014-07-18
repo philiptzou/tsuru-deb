@@ -52,7 +52,7 @@ clean:
 
 .build-deps:
 	@sudo apt-get update
-	sudo apt-get install python-software-properties debhelper devscripts git mercurial ubuntu-dev-tools cowbuilder gnupg-agent -y
+	sudo apt-get install python-software-properties debhelper devscripts git mercurial ubuntu-dev-tools cowbuilder gnupg-agent golang cdbs -y
 	@touch .build-deps
 
 .PHONY: build-deps builder build .builder-create
@@ -162,6 +162,10 @@ $(GOBASE)%:
 		GOPATH=$(abspath $@) godep restore ./...; \
 	fi
 
+$(NODEBASE)%:
+	mkdir -p $(NODEBASE)
+
+
 tsuru-server_$(TAG_tsuru-server).orig.tar.gz: $(GOBASE)tsuru-server-$(TAG_tsuru-server)
 tsuru-node-agent_$(TAG_tsuru-node-agent).orig.tar.gz: $(GOBASE)tsuru-node-agent-$(TAG_tsuru-node-agent)
 serf_$(TAG_serf).orig.tar.gz: $(GOBASE)serf-$(TAG_serf)
@@ -180,10 +184,12 @@ lxc-docker_$(TAG_lxc-docker).orig.tar.gz: $(GOBASE)lxc-docker-$(TAG_lxc-docker)
 URL_golang_$(TAG_golang).orig.tar.gz := https://launchpad.net/debian/+archive/primary/+files/golang_$(TAG_golang).orig.tar.gz
 URL_lvm2_$(TAG_lvm2).orig.tar.gz := https://git.fedorahosted.org/cgit/lvm2.git/snapshot/lvm2-$(subst .,_,$(TAG_lvm2)).tar.gz
 URL_btrfs-tools_$(TAG_btrfs-tools).orig.tar.xz := https://launchpad.net/ubuntu/+archive/primary/+files/btrfs-tools_$(TAG_btrfs-tools).orig.tar.xz
+URL_nodejs_$(TAG_nodejs).orig.tar.gz := http://nodejs.org/dist/v$(TAG_nodejs)/node-v$(TAG_nodejs).tar.gz
 
 btrfs-tools_$(TAG_btrfs-tools).orig.tar.xz \
 golang_$(TAG_golang).orig.tar.gz \
-lvm2_$(TAG_lvm2).orig.tar.gz:
+lvm2_$(TAG_lvm2).orig.tar.gz \
+nodejs_$(TAG_nodejs).orig.tar.gz:
 	curl -L -o $@ $(URL_$@)
 
 tsuru-server: TAG := $(TAG_tsuru-server)
@@ -248,15 +254,12 @@ lxc-docker: lxc-docker_$(TAG_lxc-docker).orig.tar.gz
 lvm2: lvm2_$(TAG_lvm2).orig.tar.gz
 btrfs-tools: btrfs-tools_$(TAG_btrfs-tools).orig.tar.xz
 golang: golang_$(TAG_golang).orig.tar.gz
-tsuru-server tsuru-node-agent serf gandalf-server archive-server crane tsuru-client tsuru-admin hipache-hchecker docker-registry tsuru-mongoapi lxc-docker lvm2 btrfs-tools golang:
+tsuru-server tsuru-node-agent serf gandalf-server archive-server crane tsuru-client tsuru-admin hipache-hchecker docker-registry tsuru-mongoapi lxc-docker lvm2 btrfs-tools golang nodejs node-hipache:
 	mkdir -p $(TMP)$@/
 	rm -rf $(TMP)$@/* || true
-	cp -r $@-deb/debian $(TMP)$@/
-	cp $< $(TMP)
+	cp -r $@-deb/* $(TMP)$@/
+	-cp $< $(TMP)
 	make TARGET=$@ _do
 
-nodejs:
-	make TARGET=$@ _do
 
-node-hipache:
-	make TARGET=$@ _do
+#nodejs: nodejs_$(TAG_nodejs).orig.tar.gz

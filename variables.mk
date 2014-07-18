@@ -1,5 +1,6 @@
 TMP = tmp/
-GOBASE := $(TMP)gopath/
+GOBASE := $(TMP)gobase/
+NODEBASE := $(TMP)nodebase/
 
 DEBIAN_MIRROR = "http://debian.ustc.edu.cn/debian/"
 UBUNTU_MIRROR = "http://debian.ustc.edu.cn/ubuntu/"
@@ -32,7 +33,9 @@ TAG_tsuru-mongoapi=0.2.0
 TAG_lxc-docker=1.0.0
 TAG_lvm2=2.02.103
 TAG_btrfs-tools=3.12
-TAG_golang=1.2.1
+TAG_golang = 1.2.1
+TAG_nodejs = 0.10.26.3
+TAG_node-hipache = 0.2.5
 
 -include variables.local.mk
 
