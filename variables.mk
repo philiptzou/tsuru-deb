@@ -1,5 +1,6 @@
 TMP = tmp/
 GOBASE := $(TMP)gobase/
+GITBASE := $(TMP)gitbase/
 NODEBASE := $(TMP)nodebase/
 
 DEBIAN_MIRROR = "http://debian.ustc.edu.cn/debian/"
@@ -29,7 +30,8 @@ TAG_tsuru-admin=0.4.3
 TAG_hipache-hchecker=0.2.4.2
 TAG_docker-registry=0.1.1
 TAG_tsuru-mongoapi=0.2.0
-TAG_lxc-docker=1.0.0
+TAG_lxc-docker=1.1.1
+TAG_dh-golang=1.5
 TAG_lvm2=2.02.103
 TAG_btrfs-tools=3.12
 TAG_golang = 1.2.1

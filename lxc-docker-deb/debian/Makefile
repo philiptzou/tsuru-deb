@@ -10,9 +10,14 @@
 
 PKG_NAME=lxc-docker
 
-all:
+.gopath:
+	rm -rf ${CURDIR}/.gopath
+	mkdir -p ${CURDIR}/.gopath/src/github.com/dotcloud
+	ln -sf ${CURDIR} ${CURDIR}/.gopath/src/github.com/dotcloud/docker
+
+all: .gopath
 	# Compile docker. Used by dpkg-buildpackage.
-	GOPATH=${CURDIR} go install github.com/dotcloud/docker/docker...
+	GOPATH=${CURDIR}/.gopath:${CURDIR}/vendor go install -a -ldflags '-d -w' github.com/dotcloud/docker/docker...
 
 install:
 	# Used by dpkg-buildpackage
