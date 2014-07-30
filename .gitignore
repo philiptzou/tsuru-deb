@@ -14,11 +14,8 @@ tmp
 *.swp
 */debian/files
 *_ppa_ok
-.builder-*
-.build-*
-.install-*
-.download-*
-godeb
-*.buildd
+*.builddeb
+*.buildsrc
 variables.local.mk
 localrepo
+builder
