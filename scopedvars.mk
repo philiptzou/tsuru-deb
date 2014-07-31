@@ -10,6 +10,7 @@ ifeq ($(TARGET),archive-server)
 endif
 
 ifeq ($(TARGET),btrfs-tools)
+	export EXCEPT = sid jessie wheezy saucy trusty
 	URL := https://launchpad.net/ubuntu/+archive/primary/+files/btrfs-tools_$(TAG).orig.tar.xz
 endif
 
@@ -19,6 +20,7 @@ ifeq ($(TARGET),crane)
 endif
 
 ifeq ($(TARGET),dh-golang)
+	export EXCEPT = sid jessie saucy trusty utopic
 	URL := https://launchpad.net/debian/+archive/primary/+files/dh-golang_$(TAG).tar.gz
 endif
 
@@ -33,6 +35,7 @@ ifeq ($(TARGET),gandalf-server)
 endif
 
 ifeq ($(TARGET),golang)
+	export EXCEPT = sid jessie utopic
 	URL := https://launchpad.net/debian/+archive/primary/+files/golang_$(TAG).orig.tar.gz
 endif
 
@@ -42,6 +45,7 @@ ifeq ($(TARGET),hipache-hchecker)
 endif
 
 ifeq ($(TARGET),lvm2)
+	export EXCEPT = sid jessie
 	URL := https://git.fedorahosted.org/cgit/lvm2.git/snapshot/lvm2-$(subst .,_,$(TAG)).tar.gz
 endif
 

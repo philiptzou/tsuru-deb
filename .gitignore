@@ -19,3 +19,4 @@ tmp
 variables.local.mk
 localrepo
 builder
+*.tmp

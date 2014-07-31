@@ -2,6 +2,8 @@
 
 This repository contains sources for [Tsuru](http://tsuru.io)'s Debian packages.
 
+##
+
 You can use these packages on Ubuntu via [Tsuru ppa](https://launchpad.net/~tsuru/+archive/ppa):
 
 	% sudo apt-add-repository ppa:tsuru/ppa
@@ -15,31 +17,123 @@ You can use these packages on Ubuntu via [Tsuru ppa](https://launchpad.net/~tsur
 In order to install the necessary dependencies, on Ubuntu, run with a sudoer
 user:
 
-	% make local_setup
+	% make prepare
 
-###Building packages
+###Building source packages
 
-In order to build a source package locally, just run ``TAG=<release> make <package-name>``.
-You should use an additional "TAG" env var to use one specific git release. For instance:
+In order to build source package(s) for one software, run ``make <package-name>.buildsrc``.
+For instance:
 
-	% TAG=0.2.12 make tsuru-server
+	% make tsuru-server.buildsrc
 
-####Generating binary packages
+To build source packages for all softwares, run:
 
-To create binary packages, you gonna need cowbuilder - an wrapper with super
-powers to pbuilder, already installed with ``local_setup`` target. Just run:
+	% make buildsrc
 
-	% make cowbuilder_create
+The result package(s) is/are located in directory ``./<package-name>.buildsrc``.
 
-It will create all ubuntu releases environments supported by Tsuru team. After that,
-to build all packages just run:
+###Building binary packages
 
-	% make cowbuilder_build
+To build all packages just run:
 
-####Uploading packages
+	% make builddeb
 
-To sign and upload packages to your own PPA, just use:
+Or you just want to build one package, run ``make <package-name>.builddeb``.
+For instance:
 
-	% PPA="tsuru/ppa" make upload
+	%make tsuru-server.builddeb 
 
-It will sign all packages builded and upload to a custom PPA defined on PPA env var
+The result package(s) is/are located in directory ``./<package-name>.builddeb``.
+
+You do not need to build the source packages before binary building.
+The ``make`` command will build the necessary source packages for you.
+
+The binary(.deb) packages building process is depend on ``cowbuilder`` - an wrapper with super
+powers to pbuilder, already installed with ``prepare`` target and initialized automatically.
+But you can still initialize ``cowbuilder`` environments by:
+
+	% make builder
+
+It will create all ubuntu & debian releases environments supported by Tsuru team.
+
+###Uploading source packages to PPA (only Ubuntu distributions)
+
+You can upload any signed source packages to your own PPA, just use:
+
+	% PPA="tsuru/ppa" make tsuru-server.upload
+
+You do not need to build the source packages before uploading.
+The ``make`` command will build the necessary source packages for you.
+
+Notice: launchpad.net requires source packages only.
+It will build all binary .deb packages on its cloud after uploading.
+And do not try to upload Debian distribution packages, it will simply fail.
+
+###Hosting local repository (Ubuntu & Debian)
+
+Because PPA only supports Ubuntu, we introduced ``reprepro`` to manage and host both Ubuntu
+and Debian packages. It will be initialized with ``cowbuilder``. Or you can initialize it
+separately as your wish. Just run:
+
+	% make localrepo
+
+And you can find your local repository at ``./localrepo``.
+
+After initialization, you can build and import your binary packages into ``./localrepo`` just
+by run ``make <package-name>.builddeb``.
+
+## Custom variables
+
+All variables defined in ``variables.mk`` can be overrided by variables with the same name defined
+in ``variables.local.mk``. So you can simply custom them in the local file.
+
+### Required custom variables
+
+Variable ``GPGID`` is required for the local repository and/or PPA repository.
+You can generate a GPG key with ``gnupg``:
+
+	% sudo apt-get install gnupg
+	% gpg --gen-key
+
+After finding out your GPG id or GPG email, you can specify the ``GPGID`` in ``variables.local.mk``:
+
+	GPGID = for@example.com
+
+Or just passing the variable when you run ``make``:
+
+	% GPGID=for@example.com make some_stuff
+
+### Recommended custom variables
+
+We recommended you to custom your Debian & Ubuntu mirror repository in ``variables.local.mk``
+to make the building process faster. For example, on an EC2 instance:
+
+	DEBIAN_MIRROR = http://cloudfront.debian.net/debian
+	UBUNTU_MIRROR = http://us-west-2.ec2.archive.ubuntu.com/ubuntu
+
+Variable ``DEBEMAIL`` and ``DEBFULLNAME`` is required if you want to custom the signature in
+``debian/changelog``:
+
+	export DEBEMAIL = johndue@example.com
+	export DEBFULLNAME = John Due 
+
+## Maintainance
+
+### Bump versions
+If a package is old, you can upgrade it following these steps:
+
+0. Define env vars ``DEBFULLNAME`` and ``DEBEMAIL`` in ``~/.profile`` and source it.
+   Else, you can skip this step and specify these vars in next step.
+
+1. Upgrade files in the ``<package-name>-deb/debian`` directory, adjust ``debian/changelog``:
+
+	% cd golang-deb
+	# You should always use "unstable" as the distribution code
+	# the *.builddeb target will change it to proper code automatically
+	% DEBFULLNAME=<fullname> DEBEMAIL=<email> dch -D unstable
+
+2. Bump the TAG_* variable defined in ``variables.mk``:
+
+	TAG_golang = 1.3
+
+3. Build source package or binary package if you needed.

@@ -1,13 +1,13 @@
 TMP = tmp/
-GOBASE := $(TMP)gobase/
+GOBASE := $(TMP)gobase
 GITBASE := $(TMP)gitbase/
 NODEBASE := $(TMP)nodebase/
 
 DEFINED_VERSION=precise
 VERSIONS=precise trusty wheezy
 
-DEBIAN_MIRROR = http://debian.ustc.edu.cn/debian
-UBUNTU_MIRROR = http://debian.ustc.edu.cn/ubuntu
+DEBIAN_MIRROR = http://http.debian.net/debian
+UBUNTU_MIRROR = http://archive.ubuntu.com/ubuntu
 
 BUILDSUFFIX_precise = ~precise
 BUILDTEXT_precise = "Backport to precise."
@@ -18,9 +18,6 @@ BUILDTEXT_trusty = "Build for trusty."
 BUILDSUFFIX_wheezy = ~bpo70+
 BUILDTEXT_wheezy = "Rebuild for wheezy-backports."
 BUILDDIST_wheezy = wheezy-backports
-
-DEBEMAIL = philip.npc@gmail.com
-DEBFULLNAME = "Philip Tzou"
 
 TAG_tsuru-server = 0.5.2
 TAG_serf = 0.4.1
