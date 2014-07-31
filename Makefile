@@ -36,6 +36,14 @@ upload: $(patsubst %-deb,%.upload,$(wildcard *-deb))
 # upload to PPA
 # =============
 
+$(VERSIONS:%=_upload.%):
+	$(eval VERSION := $(@:_upload.%=%))
+	$(eval buildsfx := $(BUILDSUFFIX_$(VERSION)))
+	eval $$(gpg-agent --daemon) && debsign -k $(GPGID) $(SRCRESULT).tmp/*$(buildsfx)*.changes 
+	dput ppa:$(PPA) $(SRCRESULT).tmp/*$(buildsfx)*.changes 
+
+_upload: $(patsubst %,_upload.%,$(filter-out $(EXCEPT),$(VERSIONS)))
+
 $(patsubst %-deb,%.upload,$(wildcard *-deb)): %.upload: %.buildsrc
 	@if [ ! $(PPA) ]; then \
 		echo "PPA var must be set to upload packages... use: PPA=<value> make upload"; \
@@ -53,13 +61,7 @@ $(patsubst %-deb,%.upload,$(wildcard *-deb)): %.upload: %.buildsrc
 	$(eval include scopedvars.mk)
 	@rm -rf $(SRCRESULT).tmp 2>/dev/null || true
 	cp -la $(SRCRESULT) $(SRCRESULT).tmp
-	eval $$(gpg-agent --daemon) && for file in $(SRCRESULT).tmp/*.changes; \
-		do debsign -k $(GPGID) $$file; \
-	done; \
-	unset file
-	for file in $(SRCRESULT).tmp/*.changes; do \
-		dput ppa:$(PPA) $$file; \
-	done
+	$(MAKE) PPA=$(PPA) _upload
 	rm -rf $(SRCRESULT).tmp
 
 # reprepro initialization
