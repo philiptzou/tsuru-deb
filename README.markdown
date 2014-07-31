@@ -2,11 +2,47 @@
 
 This repository contains sources for [Tsuru](http://tsuru.io)'s Debian packages.
 
-##
+##Installation packages from repository
 
-You can use these packages on Ubuntu via [Tsuru ppa](https://launchpad.net/~tsuru/+archive/ppa):
+###Ubuntu precise (12.04 LTS) / Ubuntu trusty (14.04 LTS)
+
+The simplest way to use is the official vagrant provision. Install [vagrant](http://www.vagrantup.com/downloads.html) and your favorite vagrant provider before running these commands:
+
+    % git clone https://github.com/tsuru/tsuru-bootstrap.git
+    % cd tsuru-bootstrap
+    % vagrant up
+
+Now sit down and for a cup of tea, you'll notice that ``tsuru`` is installed automatically.
+
+Else, you can always use these packages on Ubuntu via [Tsuru ppa](https://launchpad.net/~tsuru/+archive/ppa):
 
 	% sudo apt-add-repository ppa:tsuru/ppa
+	% sudo apt-get update
+	% sudo apt-get install tsuru
+
+### Debian wheezy (7.x stable)
+
+We are still working on to support Debian wheezy. But you can install it manually now.
+
+At first, ensure you have the official "wheezy-backports" repository in your APT source list.
+The whole stuff includes ``tsuru`` and ``docker``, requires backports packages to be installed.
+
+Afterwards, you should build all packages locally. We recommend you to build them under Ubuntu
+trusty. Because Debian wheezy may not compatible with some building requirements.
+
+Set ``VERSIONS`` variable may help you to accelerate the building procedures. If you do not need
+packages for other distributions:
+
+    % echo "VERSIONS = wheezy" >> variables.local.mk
+
+After the building, you can find a local repository named ``./localrepo``. Add these lines to
+Debian wheezy APT source list:
+
+    deb file:///path/to/localrepo wheezy-backports main
+    deb-src file:///path/to/localrepo wheezy-backports main
+
+Run ``apt-get update``, you can install ``tsuru`` for Debian:
+
 	% sudo apt-get update
 	% sudo apt-get install tsuru
 
