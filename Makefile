@@ -208,7 +208,7 @@ $(VERSIONS:%=_buildsrc.%):
 _buildsrc: $(patsubst %,_buildsrc.%,$(filter-out $(EXCEPT),$(VERSIONS)))
 
 btrfs-tools.buildsrc: btrfs-tools_$(TAG_btrfs-tools).orig.tar.xz
-tsuru-server.buildsrc serf.buildsrc gandalf-server.buildsrc archive-server.buildsrc crane.buildsrc tsuru-client.buildsrc tsuru-admin.buildsrc hipache-hchecker.buildsrc docker-registry.buildsrc tsuru-mongoapi.buildsrc lxc-docker.buildsrc lvm2.buildsrc golang.buildsrc dh-golang.buildsrc nodejs.buildsrc node-hipache.buildsrc: $$(patsubst %.buildsrc,%,$$@)_$$(TAG_$$(patsubst %.buildsrc,%,$$@)).orig.tar.gz
+tsuru-server.buildsrc serf.buildsrc gandalf-server.buildsrc archive-server.buildsrc crane.buildsrc tsuru-client.buildsrc tsuru-admin.buildsrc hipache-hchecker.buildsrc docker-registry.buildsrc tsuru-mongoapi.buildsrc lxc-docker.buildsrc lvm2.buildsrc golang.buildsrc dh-golang.buildsrc nodejs.buildsrc: $$(patsubst %.buildsrc,%,$$@)_$$(TAG_$$(patsubst %.buildsrc,%,$$@)).orig.tar.gz
 btrfs-tools.buildsrc tsuru-server.buildsrc serf.buildsrc gandalf-server.buildsrc archive-server.buildsrc crane.buildsrc tsuru-client.buildsrc tsuru-admin.buildsrc hipache-hchecker.buildsrc docker-registry.buildsrc tsuru-mongoapi.buildsrc lxc-docker.buildsrc lvm2.buildsrc golang.buildsrc dh-golang.buildsrc nodejs.buildsrc node-hipache.buildsrc:
 	$(eval include scopedvars.mk)
 	rm -rf $(SRCRESULT) $(SRCRESULT).tmp/* || true

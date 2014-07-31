@@ -3,6 +3,12 @@ export TAG := $(TAG_$(TARGET))
 
 export SRCRESULT := $(CURDIR)/$(TARGET).buildsrc
 export DEBRESULT := $(CURDIR)/$(TARGET).builddeb
+export EXCEPT :=
+GITTAG :=
+GITPATH :=
+TAR_OPTIONS :=
+GOURL :=
+URL :=
 
 ifeq ($(TARGET),archive-server)
 	GITPATH = github.com/tsuru/archive-server
