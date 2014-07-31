@@ -31,7 +31,7 @@ endif
 
 ifeq ($(TARGET),gandalf-server)
 	GITPATH = github.com/tsuru/gandalf
-	GOURL := $(GITPATH)...
+	GOURL := $(GITPATH)/...
 endif
 
 ifeq ($(TARGET),golang)
@@ -41,7 +41,7 @@ endif
 
 ifeq ($(TARGET),hipache-hchecker)
 	GITPATH = github.com/morpheu/hipache-hchecker
-	GOURL := $(GITPATH)...
+	GOURL := $(GITPATH)/...
 endif
 
 ifeq ($(TARGET),lvm2)
@@ -55,13 +55,15 @@ ifeq ($(TARGET),lxc-docker)
 endif
 
 ifeq ($(TARGET),nodejs)
-	URL := http://nodejs.org/dist/v$(TAG)/node-v$(TAG).tar.gz
+	#URL := http://nodejs.org/dist/v$(TAG)/node-v$(TAG).tar.gz
+	export EXCEPT = sid jessie
+	URL := https://launchpad.net/~tsuru/+archive/ubuntu/ppa/+files/nodejs_$(TAG).orig.tar.gz
 endif
 
 ifeq ($(TARGET),serf)
 	GITTAG := v$(TAG)
 	GITPATH = github.com/hashicorp/serf
-	GOURL := $(GITPATH)...
+	GOURL := $(GITPATH)/...
 endif
 
 ifeq ($(TARGET),tsuru-admin)
@@ -71,7 +73,7 @@ endif
 
 ifeq ($(TARGET),tsuru-client)
 	GITPATH = github.com/tsuru/tsuru-client
-	GOURL := $(GITPATH)...
+	GOURL := $(GITPATH)/...
 endif
 
 ifeq ($(TARGET),tsuru-mongoapi)
@@ -81,6 +83,10 @@ endif
 
 ifeq ($(TARGET),tsuru-server)
 	GITPATH = github.com/tsuru/tsuru
-	GOURL := $(GITPATH)...
+	GOURL := $(GITPATH)/...
 	TAR_OPTIONS := --exclude $(TARGET)-$(TAG)/src/$(GITPATH)/src
+endif
+
+ifneq (,$(findstring .upload,$@))
+	export EXCEPT := $(EXCEPT) sid jessie wheezy
 endif

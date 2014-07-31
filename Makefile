@@ -12,12 +12,6 @@ GOPATH=$(shell echo $$PWD)
 
 include header.mk
 
-ifdef DEBEMAIL
-	debsign_opt := "-e$$DEBEMAIL"
-else
-	debsign_opt := ""
-endif
-
 all:
 	@exit 0
 
@@ -32,11 +26,6 @@ prepare:
 	GOPATH=/tmp/gopath go get github.com/kr/godep
 	@sudo mv /tmp/gopath/bin/godep /usr/bin
 	@rm -rf /tmp/gopath
-
-upload:
-	if [ ! $(PPA) ]; then echo "PPA var must be set to upload packages... use: PPA=<value> make upload"; exit 1; fi
-	eval $$(gpg-agent --daemon) && for file in *.changes; do debsign $(debsign_opt) $$file; done; unset file
-	for file in *.changes; do dput ppa:$(PPA) $$file; done
 
 builddeb: $(patsubst %-deb,%.builddeb,$(wildcard *-deb))
 
@@ -61,10 +50,17 @@ $(patsubst %-deb,%.upload,$(wildcard *-deb)): %.upload: %.buildsrc
 		echo '$$ gpg --gen-key' >&2; \
 		exit 1; \
 	fi
-	eval $$(gpg-agent --daemon) && for file in $(SRCRESULT)/*.changes; \
-		do debsign $(debsign_opt) $$file; \
+	$(eval include scopedvars.mk)
+	@rm -rf $(SRCRESULT).tmp 2>/dev/null || true
+	cp -la $(SRCRESULT) $(SRCRESULT).tmp
+	eval $$(gpg-agent --daemon) && for file in $(SRCRESULT).tmp/*.changes; \
+		do debsign -k $(GPGID) $$file; \
 	done; \
 	unset file
+	for file in $(SRCRESULT).tmp/*.changes; do \
+		dput ppa:$(PPA) $$file; \
+	done
+	rm -rf $(SRCRESULT).tmp
 
 # reprepro initialization
 # =======================
@@ -157,6 +153,7 @@ _builddeb: localrepo $(patsubst %,_builddeb.%,$(filter-out $(EXCEPT),$(VERSIONS)
 
 tsuru-server.builddeb serf.builddeb gandalf-server.builddeb archive-server.builddeb crane.builddeb tsuru-client.builddeb tsuru-admin.builddeb hipache-hchecker.builddeb docker-registry.builddeb tsuru-mongoapi.builddeb: golang.builddeb
 lxc-docker.builddeb: golang.builddeb dh-golang.builddeb lvm2.builddeb btrfs-tools.builddeb
+node-hipache.builddeb: nodejs.builddeb
 
 $(patsubst %-deb,%.builddeb,$(wildcard *-deb)): %.builddeb: builder %.buildsrc
 	$(eval include scopedvars.mk)
@@ -211,8 +208,8 @@ $(VERSIONS:%=_buildsrc.%):
 _buildsrc: $(patsubst %,_buildsrc.%,$(filter-out $(EXCEPT),$(VERSIONS)))
 
 btrfs-tools.buildsrc: btrfs-tools_$(TAG_btrfs-tools).orig.tar.xz
-tsuru-server.buildsrc serf.buildsrc gandalf-server.buildsrc archive-server.buildsrc crane.buildsrc tsuru-client.buildsrc tsuru-admin.buildsrc hipache-hchecker.buildsrc docker-registry.buildsrc tsuru-mongoapi.buildsrc lxc-docker.buildsrc lvm2.buildsrc golang.buildsrc dh-golang.buildsrc: $$(patsubst %.buildsrc,%,$$@)_$$(TAG_$$(patsubst %.buildsrc,%,$$@)).orig.tar.gz
-btrfs-tools.buildsrc tsuru-server.buildsrc serf.buildsrc gandalf-server.buildsrc archive-server.buildsrc crane.buildsrc tsuru-client.buildsrc tsuru-admin.buildsrc hipache-hchecker.buildsrc docker-registry.buildsrc tsuru-mongoapi.buildsrc lxc-docker.buildsrc lvm2.buildsrc golang.buildsrc dh-golang.buildsrc:
+tsuru-server.buildsrc serf.buildsrc gandalf-server.buildsrc archive-server.buildsrc crane.buildsrc tsuru-client.buildsrc tsuru-admin.buildsrc hipache-hchecker.buildsrc docker-registry.buildsrc tsuru-mongoapi.buildsrc lxc-docker.buildsrc lvm2.buildsrc golang.buildsrc dh-golang.buildsrc nodejs.buildsrc node-hipache.buildsrc: $$(patsubst %.buildsrc,%,$$@)_$$(TAG_$$(patsubst %.buildsrc,%,$$@)).orig.tar.gz
+btrfs-tools.buildsrc tsuru-server.buildsrc serf.buildsrc gandalf-server.buildsrc archive-server.buildsrc crane.buildsrc tsuru-client.buildsrc tsuru-admin.buildsrc hipache-hchecker.buildsrc docker-registry.buildsrc tsuru-mongoapi.buildsrc lxc-docker.buildsrc lvm2.buildsrc golang.buildsrc dh-golang.buildsrc nodejs.buildsrc node-hipache.buildsrc:
 	$(eval include scopedvars.mk)
 	rm -rf $(SRCRESULT) $(SRCRESULT).tmp/* || true
 	mkdir -p $(SRCRESULT).tmp/$(TARGET)
@@ -222,14 +219,3 @@ btrfs-tools.buildsrc tsuru-server.buildsrc serf.buildsrc gandalf-server.buildsrc
 	rm -rf $(SRCRESULT).tmp/$(TARGET) || true
 	mv $(SRCRESULT).tmp $(SRCRESULT)
 	touch $(SRCRESULT)
-
-#dh-golang.buildsrc: dh-golang_$(TAG_dh-golang).orig.tar.gz
-#	$(eval include scopedvars.mk)
-#	rm -rf $(SRCRESULT) $(SRCRESULT).tmp/* || true
-#	mkdir -p $(SRCRESULT).tmp/
-#	tar -zxf $(CURDIR)/$(TARGET)_$(TAG).orig.tar.gz -C $(SRCRESULT).tmp/
-#	mv $(SRCRESULT).tmp/$(TARGET)-$(TAG) $(SRCRESULT).tmp/$(TARGET)
-#	$(MAKE) _buildsrc
-#	rm -rf $(SRCRESULT).tmp/$(TARGET) || true
-#	mv $(SRCRESULT).tmp $(SRCRESULT)
-#	touch $(SRCRESULT)

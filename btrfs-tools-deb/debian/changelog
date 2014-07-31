@@ -1,4 +1,4 @@
-btrfs-tools (3.12-2) unstable; urgency=medium
+btrfs-tools (3.12-1tsuru1) unstable; urgency=low
 
   * Change distribution to unstable.
 
