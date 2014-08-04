@@ -1,3 +1,10 @@
+gandalf-server (0.4.1-2) unstable; urgency=medium
+
+  * Add examples
+  * Add dependency on git-daemon-sysvinit
+
+ -- Phlip Tzou <philip.npc@gmail.com>  Mon, 04 Aug 2014 10:33:03 +0000
+
 gandalf-server (0.4.1-1) unstable; urgency=low
 
   * Change distribution to unstable
