@@ -2,7 +2,7 @@ tsuru-deb
 =========
 
 A public repository build from latest tsuru-deb (philiptzou's fork).
-Supportted Ubuntu 12.04 (precise), 14.04 (trusty) and Debian 7.x(wheezy).
+Supported Ubuntu 12.04 (precise), 14.04 (trusty) and Debian 7.x(wheezy).
 
 Run these commands to add this repostory to you APT source list:
 
