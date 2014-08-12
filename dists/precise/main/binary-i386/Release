@@ -1,0 +1,5 @@
+Component: main
+Origin: tsuru-deb
+Label: tsuru-deb
+Architecture: i386
+Description: tsuru-deb local repository

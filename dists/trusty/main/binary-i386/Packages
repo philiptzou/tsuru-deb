@@ -1,0 +1,430 @@
+Package: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 89
+Depends: golang-go (>= 2:1.2.1-2tsuru1~trusty1), golang-src (>= 2:1.2.1-2tsuru1~trusty1), golang-doc (>= 2:1.2.1-2tsuru1~trusty1)
+Conflicts: golang-weekly
+Replaces: golang-weekly
+Provides: golang-weekly
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang_1.2.1-2tsuru1~trusty1_all.deb
+Size: 24734
+SHA256: c96f91b05ac5ff7b2ab5a562ec0b9cf0f75e8142756c27be755779c904fc30b4
+SHA1: 8f6bc087f31a60c2decadf9371a87e92452c692e
+MD5sum: 2af88efad147cd0c86087e2c3fc37fa8
+Description: Go programming language compiler - metapackage
+ The Go programming language is an open source project to make
+ programmers more productive. Go is expressive, concise, clean, and
+ efficient. Its concurrency mechanisms make it easy to write programs
+ that get the most out of multicore and networked machines, while its
+ novel type system enables flexible and modular program construction.
+ Go compiles quickly to machine code yet has the convenience of
+ garbage collection and the power of run-time reflection. It's a
+ fast, statically typed, compiled language that feels like a
+ dynamically typed, interpreted language.
+ .
+ This package is a metapackage that, when installed, guarantees
+ that (most of) a full Go development environment is installed.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-doc
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 3231
+Depends: golang-go
+Conflicts: golang-weekly-doc
+Replaces: golang-weekly-doc
+Provides: golang-weekly-doc
+Homepage: http://golang.org/
+Priority: optional
+Section: doc
+Filename: pool/main/g/golang/golang-doc_1.2.1-2tsuru1~trusty1_all.deb
+Size: 1940614
+SHA256: b95a87d39d3d4110deec357c68b864d5c9edee730a0c84b9c320fe7f4eae0345
+SHA1: 9d81d2a567680be589464cecca4fceffa0ac1cb1
+MD5sum: 7cc8bd387004de18108936295ab5bf4d
+Description: Go programming language compiler - documentation
+ The Go programming language is an open source project to make
+ programmers more productive. Go is expressive, concise, clean, and
+ efficient. Its concurrency mechanisms make it easy to write programs
+ that get the most out of multicore and networked machines, while its
+ novel type system enables flexible and modular program construction.
+ Go compiles quickly to machine code yet has the convenience of
+ garbage collection and the power of run-time reflection. It's a fast,
+ statically typed, compiled language that feels like a dynamically
+ typed, interpreted language.
+ .
+ This package provides the documentation for the Go programming
+ language. You can view the formatted documentation by running "godoc
+ --http=:6060", and then visiting http://localhost:6060/doc/install.html.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-darwin-386
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 43109
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-darwin-386_1.2.1-2tsuru1~trusty1_all.deb
+Size: 5852970
+SHA256: 9808c69259e36fc782af0dacb7293d92dba2c897328449a170eb1a668fe9a96a
+SHA1: 470c0e2c93699d0d5c0ced27524487064993c35a
+MD5sum: 030666b7284c443bc7e4b60928aec362
+Description: Go standard library compiled for darwin_386
+ This package contains the Go standard library,
+ compiled for darwin_386.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-darwin-amd64
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 42899
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-darwin-amd64_1.2.1-2tsuru1~trusty1_all.deb
+Size: 5842828
+SHA256: caa493a4075f663214d424f0f4547fb9e0a1c16d00b728cd158cfbc8d03061f3
+SHA1: 80e7e70a6af0ebfae37099e65ded9cd75ad0a386
+MD5sum: 8545c10e7c84c79780185b9df5d488b4
+Description: Go standard library compiled for darwin_amd64
+ This package contains the Go standard library,
+ compiled for darwin_amd64.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-freebsd-386
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 43107
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-freebsd-386_1.2.1-2tsuru1~trusty1_all.deb
+Size: 5848778
+SHA256: 750c437d4f22f49aba73598fe2b23eeea5e76d5476d6a58b288a0af6ca45736b
+SHA1: 1591c156567afb8a4a881e54d096ba51e6b4744b
+MD5sum: 8770815a6142013ecdfa23526ebe7efa
+Description: Go standard library compiled for freebsd_386
+ This package contains the Go standard library,
+ compiled for freebsd_386.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-freebsd-amd64
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 42705
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-freebsd-amd64_1.2.1-2tsuru1~trusty1_all.deb
+Size: 5791770
+SHA256: 67bdda8ee87cb1376ffb54aaa3615dc797c5000724f9ec5ba41725e926d6c679
+SHA1: 830b6a0258aa9cf0524e816baae1902536884979
+MD5sum: 10ea41a9c356e7bdb6e5f328affd7258
+Description: Go standard library compiled for freebsd_amd64
+ This package contains the Go standard library,
+ compiled for freebsd_amd64.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-freebsd-arm
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 57833
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-freebsd-arm_1.2.1-2tsuru1~trusty1_all.deb
+Size: 6202060
+SHA256: b4da86dbf481f043b602f982b1a44df308242f8a74f7b93c8ae260c5b6c3bbfe
+SHA1: 88035294b11d17379fa659f46d56f9e308169474
+MD5sum: 999897906d54d13eae42b0d48e0b28c4
+Description: Go standard library compiled for freebsd_arm
+ This package contains the Go standard library,
+ compiled for freebsd_arm.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-netbsd-386
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 43061
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-netbsd-386_1.2.1-2tsuru1~trusty1_all.deb
+Size: 5843490
+SHA256: 555414e264defa98239d498c5bdf6ea4a7a8f6f74731ac2ff94bd0cac8f6170e
+SHA1: dad17d2f060c527b9696822d6063b5239369938f
+MD5sum: fb08e893ddff182d52b00656dd1f895a
+Description: Go standard library compiled for netbsd_386
+ This package contains the Go standard library,
+ compiled for netbsd_386.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-netbsd-amd64
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 42660
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-netbsd-amd64_1.2.1-2tsuru1~trusty1_all.deb
+Size: 5786360
+SHA256: aad66e4fc43cf72feb06b97938f45b0e4945dea785a306c5b009db8494b00892
+SHA1: 8d29071bb1d2d8e4fe4e2dfc3bc9dd64f4c95949
+MD5sum: a27579232de9d8746d522099be4df62e
+Description: Go standard library compiled for netbsd_amd64
+ This package contains the Go standard library,
+ compiled for netbsd_amd64.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-windows-386
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 43561
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-windows-386_1.2.1-2tsuru1~trusty1_all.deb
+Size: 5918330
+SHA256: b206fa968ee6ff6c5f8e253eb362b8385ee9534b94f132e0ca9f79a00cde4351
+SHA1: 70d40e3453fb07bc773d3201d8d476a4982da7fd
+MD5sum: c219591c75da5a648e33b4eb3761a3c8
+Description: Go standard library compiled for windows_386
+ This package contains the Go standard library,
+ compiled for windows_386.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-windows-amd64
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 43356
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-windows-amd64_1.2.1-2tsuru1~trusty1_all.deb
+Size: 5916164
+SHA256: 95b56f0b904b481c337858334c804b01027acf702d3e4224deb538dbea679d2c
+SHA1: 1831035c2f49a5b686ae85eb890d56019a35178a
+MD5sum: 6251ab2db4ef521363abb6b382d6cb60
+Description: Go standard library compiled for windows_amd64
+ This package contains the Go standard library,
+ compiled for windows_amd64.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-mode
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 183
+Depends: emacs23 | emacsen, emacsen-common (>= 1.4.14)
+Suggests: golang-go
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-mode_1.2.1-2tsuru1~trusty1_all.deb
+Size: 37974
+SHA256: c3152c52d7297b34ac5338539c2e52d8369f1129325a39c23363f2f9f8949ed0
+SHA1: 6634de0d7b8744e3d20dcfb6bb0c4dfbc46db58c
+MD5sum: e61eed2d974a8ef4040cf3c8b55b6912
+Description: Go programming language - mode for GNU Emacs
+ This package provides a GNU Emacs major mode for editing code in
+ Google's Go programming language.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: kate-syntax-go
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 111
+Depends: kate
+Suggests: golang-go
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/kate-syntax-go_1.2.1-2tsuru1~trusty1_all.deb
+Size: 25670
+SHA256: f49180657e16eea7a8b010904733d6e8023bfa701714d4988e718ca78123bdd0
+SHA1: e364e303226d596162502a1d7d615f939ad6f835
+MD5sum: 91ba7f521ae105d910ed3c3af1c5daaa
+Description: Go programming language - Kate highlighting syntax files
+ This package provides syntax files for the Kate editor for editing code
+ in Google's Go programming language.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: nodejs-legacy
+Source: nodejs
+Version: 0.10.26.3-0tsuru1~trusty1
+Architecture: all
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Installed-Size: 119
+Depends: nodejs (>= 0.10.25-0ubuntu1ppa3)
+Conflicts: node, nodejs (<< 0.10.25), npm
+Homepage: http://nodejs.org/
+Priority: extra
+Section: web
+Filename: pool/main/n/nodejs/nodejs-legacy_0.10.26.3-0tsuru1~trusty1_all.deb
+Size: 75318
+SHA256: 3e8a7fa3868159e15b01bea4bf11feca0bd5e640494f14d85aec66679a31ed85
+SHA1: b5e1b78e7281835c2378ed020c42a2ca2e265679
+MD5sum: d51c9a52bdfe2f8069e843c5e40561f5
+Description: evented I/O for V8 javascript (legacy symlink)
+ Node.js is a platform built on Chrome's JavaScript runtime for easily
+ building fast, scalable network applications. Node.js uses an
+ event-driven, non-blocking I/O model that makes it lightweight and
+ efficient, perfect for data-intensive real-time applications that run
+ across distributed devices.
+ .
+ This package contains a symlink for legacy Node.js code requiring
+ binary to be /usr/bin/node (not /usr/bin/nodejs as provided in Debian).
+ .
+ No other Debian packages should depend on this package.  For more
+ information, see
+ <http://lists.debian.org/debian-devel-announce/2012/07/msg00002.html>
+
+Package: vim-syntax-go
+Source: golang
+Version: 2:1.2.1-2tsuru1~trusty1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 142
+Depends: vim
+Recommends: vim-addon-manager
+Suggests: golang-go
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/vim-syntax-go_1.2.1-2tsuru1~trusty1_all.deb
+Size: 30436
+SHA256: e40a6594e49fe7cfee1d37a707569ca1e7f79ae2f52f1424e546fd283b862584
+SHA1: cb57591434d2dd4d81dd3c2df40ce1835264a176
+MD5sum: bc0383869a1b2c7a1578da1ca6566fa8
+Description: Go programming language - Vim highlighting syntax files
+ This package provides syntax files for the Vim editor for editing code
+ in Google's Go programming language.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+

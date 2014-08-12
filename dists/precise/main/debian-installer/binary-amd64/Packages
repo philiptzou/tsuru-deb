@@ -1,0 +1,89 @@
+Package: btrfs-tools-udeb
+Source: btrfs-tools
+Version: 3.12-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Dimitri John Ledkov <xnox@debian.org>
+Installed-Size: 525
+Depends: libblkid1-udeb (>= 2.16), libc6-udeb (>= 2.15), liblzo2-2, libuuid1-udeb (>= 2.16), zlib1g-udeb (>= 1:1.2.3.3.dfsg-1)
+Priority: optional
+Section: debian-installer
+Filename: pool/main/b/btrfs-tools/btrfs-tools-udeb_3.12-1tsuru1~precise1_amd64.udeb
+Size: 261132
+SHA256: c798bdef1c8737129a6977e849bee953d768fa434b357931b875979b0f7061ed
+SHA1: 7bbe108a8d788a45ff5612b4fbf81be8251cf9ba
+MD5sum: 724fc1d01f20655f800989d33df2b3ed
+Description: Checksumming Copy on Write Filesystem utilities (udeb)
+
+Package: dmsetup-udeb
+Source: lvm2 (2.02.103-1tsuru1~precise1)
+Version: 2:1.02.82-git-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 118
+Depends: libc6-udeb (>= 2.15), libdevmapper1.02.1-udeb (>= 2:1.02.82-git)
+Priority: optional
+Section: debian-installer
+Filename: pool/main/l/lvm2/dmsetup-udeb_1.02.82-git-1tsuru1~precise1_amd64.udeb
+Size: 29116
+SHA256: 0312ad97ba789117244d330d685a326cd15e602d2f1ac2c0505712411bac5186
+SHA1: 626a91dbfec7e57560c90a6f73ba73a49387906f
+MD5sum: 219feb6aee6531ce14ec07531deaa2ab
+Description: The Linux Kernel Device Mapper userspace library
+ The Linux Kernel Device Mapper is the LVM (Linux Logical Volume Management)
+ Team's implementation of a minimalistic kernel-space driver that handles
+ volume management, while keeping knowledge of the underlying device layout
+ in user-space.  This makes it useful for not only LVM, but EVMS, software
+ raid, and other drivers that create "virtual" block devices.
+ .
+ This package contains a utility for modifying device mappings.
+Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
+
+Package: libdevmapper1.02.1-udeb
+Source: lvm2 (2.02.103-1tsuru1~precise1)
+Version: 2:1.02.82-git-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 213
+Depends: libc6-udeb (>= 2.15)
+Recommends: dmsetup-udeb
+Priority: optional
+Section: debian-installer
+Filename: pool/main/l/lvm2/libdevmapper1.02.1-udeb_1.02.82-git-1tsuru1~precise1_amd64.udeb
+Size: 91846
+SHA256: 40111a9f371c72318f55b283f99e2ff68f7867bd33ab5e563f497bc6ae630633
+SHA1: 389c7414ac8e194967936829d7449b2d4cb6d11c
+MD5sum: 32339cef01a5612e3e56923675e1e419
+Description: The Linux Kernel Device Mapper userspace library
+ This is a udeb, or a microdeb, for the debian-installer.
+ .
+ The Linux Kernel Device Mapper is the LVM (Linux Logical Volume Management)
+ Team's implementation of a minimalistic kernel-space driver that handles
+ volume management, while keeping knowledge of the underlying device layout
+ in user-space.  This makes it useful for not only LVM, but EVMS, software
+ raid, and other drivers that create "virtual" block devices.
+Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
+
+Package: lvm2-udeb
+Source: lvm2
+Version: 2.02.103-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 974
+Depends: libc6-udeb (>= 2.15), libdevmapper1.02.1-udeb (>= 2:1.02.82-git), watershed-udeb
+Priority: optional
+Section: debian-installer
+Filename: pool/main/l/lvm2/lvm2-udeb_2.02.103-1tsuru1~precise1_amd64.udeb
+Size: 403664
+SHA256: dbc9d2ea0294c0274e7df4e13eea205202edebe32f928435d210925c66a14387
+SHA1: 4fa65aea9927b0833f1e60ff9c289c4b31a92bc3
+MD5sum: a23631770b1c751c39f9e6e42e942585
+Description: The Linux Logical Volume Manager
+ This is a udeb, or a microdeb, for the debian-installer.
+ .
+ This is LVM2, the rewrite of The Linux Logical Volume Manager.  LVM
+ supports enterprise level volume management of disk and disk subsystems
+ by grouping arbitrary disks into volume groups. The total capacity of
+ volume groups can be allocated to logical volumes, which are accessed as
+ regular block devices.
+Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
+

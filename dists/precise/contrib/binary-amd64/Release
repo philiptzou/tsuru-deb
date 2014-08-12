@@ -1,0 +1,5 @@
+Component: contrib
+Origin: tsuru-deb
+Label: tsuru-deb
+Architecture: amd64
+Description: tsuru-deb local repository

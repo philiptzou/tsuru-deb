@@ -1,0 +1,1171 @@
+Package: archive-server
+Version: 0.1.1-2~precise1
+Architecture: amd64
+Maintainer: Globo.com <tsuru@corp.globo.com>
+Installed-Size: 5893
+Depends: upstart-job
+Homepage: https://github.com/tsuru/archive-server
+Priority: extra
+Section: devel
+Filename: pool/main/a/archive-server/archive-server_0.1.1-2~precise1_amd64.deb
+Size: 1532390
+SHA256: d8a38dcb279c634d901b3573bcee25a324b0ab36c671e8174111831f4b133d3c
+SHA1: f0fcc074eec4d3d33415907c28c13946bae297b5
+MD5sum: a0c81656282d51c0744814de29c751ec
+Description: archive-server is an HTTP server used for storing git-archives.
+ It can generate new git archives on demand, and serve they on unique requests.
+
+Package: btrfs-tools
+Version: 3.12-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Dimitri John Ledkov <xnox@debian.org>
+Installed-Size: 2465
+Depends: e2fslibs (>= 1.41.99), libblkid1 (>= 2.17.2), libc6 (>= 2.7), libcomerr2 (>= 1.01), liblzo2-2, libuuid1 (>= 2.16), zlib1g (>= 1:1.2.0)
+Homepage: http://btrfs.wiki.kernel.org/
+Priority: optional
+Section: admin
+Filename: pool/main/b/btrfs-tools/btrfs-tools_3.12-1tsuru1~precise1_amd64.deb
+Size: 1188610
+SHA256: f54119b5329bac4df6337a74b84b717d33a1da94156273bc3b3480c08dc86e4a
+SHA1: d5dde8cf51be4ec864e97c0a8e8da684205111c1
+MD5sum: 5a9e3c1df8b3efe2a9eb50fd2ba63817
+Description: Checksumming Copy on Write Filesystem utilities
+ Btrfs is a new copy on write filesystem for Linux aimed at implementing
+ advanced features while focusing on fault tolerance, repair and easy
+ administration.
+ .
+ This package contains utilities (mkfs, fsck) used to work with btrfs
+ and an utility (btrfs-convert) to make a btrfs filesystem from an ext3.
+
+Package: btrfs-tools-dbg
+Source: btrfs-tools
+Version: 3.12-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Dimitri John Ledkov <xnox@debian.org>
+Installed-Size: 3810
+Depends: btrfs-tools (= 3.12-1tsuru1~precise1)
+Homepage: http://btrfs.wiki.kernel.org/
+Priority: extra
+Section: debug
+Filename: pool/main/b/btrfs-tools/btrfs-tools-dbg_3.12-1tsuru1~precise1_amd64.deb
+Size: 3467202
+SHA256: d03683b88336b81ee81183ad13ab7c4982af413344d81528f113b09b36307375
+SHA1: 478f92bee57e7ff484463278dcb6e385d7303a88
+MD5sum: 4c5e48b7d93f3da50e99848b6ceb47df
+Description: Checksumming Copy on Write Filesystem utilities (debug)
+ Btrfs is a new copy on write filesystem for Linux aimed at implementing
+ advanced features while focusing on fault tolerance, repair and easy
+ administration.
+ .
+ This package contains the debugging symbols.
+
+Package: crane
+Version: 0.5.4-1~precise1
+Architecture: amd64
+Maintainer: Globo.com <tsuru@corp.globo.com>
+Installed-Size: 5764
+Homepage: http://tsuru.io
+Priority: extra
+Section: devel
+Filename: pool/main/c/crane/crane_0.5.4-1~precise1_amd64.deb
+Size: 1510416
+SHA256: 2dd65894336d95d191eaa413e828881e26cf9703c8a9e797b29ad3bae0f6d93d
+SHA1: 7500de905f24935df1a275145cd5a86793b2d34e
+MD5sum: 265ec274e10d6b7d1bcb0929853b231d
+Description: crane is the command line interface for the tsuru server, used by service administrators
+ Tsuru is an open source platform as a service software. This package installs
+ the client used by service administrators to communicate with tsuru server.
+
+Package: dh-golang
+Version: 1.5+struktur1~precise1
+Architecture: all
+Maintainer: Michael Stapelberg <stapelberg@debian.org>
+Installed-Size: 27
+Depends: debhelper, libparse-debcontrol-perl, dpkg (>= 1.16.1)
+Priority: extra
+Section: devel
+Filename: pool/main/d/dh-golang/dh-golang_1.5+struktur1~precise1_all.deb
+Size: 2876
+SHA256: 341fd48320508e934d4e2fa5b50727b303d1c6342479fccd423c7d1bd874cd48
+SHA1: fd410a658fd646d2c8955e0f21aea54fc855a97b
+MD5sum: 22ce87d814a2844eefebd956e0b571a1
+Description: debhelper add-on for packaging software written in Go (golang)
+ dh-golang provides a debhelper sequence addon named 'golang', a buildsystem
+ module named 'golang' and a command called dh_golang.
+ .
+ The golang debhelper buildsystem is designed to make packaging programs
+ written in Go very simple.
+
+Package: dmeventd
+Source: lvm2 (2.02.103-1tsuru1~precise1)
+Version: 2:1.02.82-git-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 88
+Depends: libc6 (>= 2.15), libdevmapper-event1.02.1 (>= 2:1.02.82-2.02.103), libdevmapper1.02.1 (>= 2:1.02.82-2.02.103)
+Homepage: http://sources.redhat.com/lvm2/
+Priority: optional
+Section: admin
+Filename: pool/main/l/lvm2/dmeventd_1.02.82-git-1tsuru1~precise1_amd64.deb
+Size: 43796
+SHA256: 5abb40b634eea405baab3550c3b5d98208e2079fd5096c66cb5d459c2125c338
+SHA1: cad345e6df5e24315597c5e5176c1c12f502f9c0
+MD5sum: f84e403e356e94a235db413fd342be09
+Description: The Linux Kernel Device Mapper userspace library
+ The Linux Kernel Device Mapper is the LVM (Linux Logical Volume Management)
+ Team's implementation of a minimalistic kernel-space driver that handles
+ volume management, while keeping knowledge of the underlying device layout
+ in user-space.  This makes it useful for not only LVM, but EVMS, software
+ raid, and other drivers that create "virtual" block devices.
+ .
+ This package contains a daemon to monitor events of devmapper devices.
+Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
+
+Package: dmsetup
+Source: lvm2 (2.02.103-1tsuru1~precise1)
+Version: 2:1.02.82-git-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 178
+Depends: libc6 (>= 2.14), libdevmapper1.02.1 (>= 2:1.02.82-2.02.103), initramfs-tools, util-linux (>> 2.16), udev (>> 141-2)
+Conflicts: devicekit-disks (<< 009)
+Breaks: udev (<< 138-1)
+Homepage: http://sources.redhat.com/lvm2/
+Priority: optional
+Section: admin
+Filename: pool/main/l/lvm2/dmsetup_1.02.82-git-1tsuru1~precise1_amd64.deb
+Size: 76296
+SHA256: f32388f8110dba1f15495fabbdad9c5649019ddb1ecb6c18374da54eedbbe9df
+SHA1: 479da351f2a5cbfafa00bc6b3943d5edff1ab4ea
+MD5sum: a43857a41d5c2e5915ddd961eb920ba8
+Description: The Linux Kernel Device Mapper userspace library
+ The Linux Kernel Device Mapper is the LVM (Linux Logical Volume Management)
+ Team's implementation of a minimalistic kernel-space driver that handles
+ volume management, while keeping knowledge of the underlying device layout
+ in user-space.  This makes it useful for not only LVM, but EVMS, software
+ raid, and other drivers that create "virtual" block devices.
+ .
+ This package contains a utility for modifying device mappings.
+Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
+
+Package: docker-registry
+Version: 0.1.1-4~precise1
+Architecture: amd64
+Maintainer: Globo.com <tsuru@corp.globo.com>
+Installed-Size: 5366
+Depends: upstart-job
+Homepage: http://docker.io
+Priority: extra
+Section: devel
+Filename: pool/main/d/docker-registry/docker-registry_0.1.1-4~precise1_amd64.deb
+Size: 1414094
+SHA256: 4986e8e89836c609f271576f9ba69b542040a610defa03aff740327b12a1c804
+SHA1: 9c68ac6c064f8c9f04079ae13a3fd622a74dd3ed
+MD5sum: bc2ca43f42c26ebc8f8f67d5942c6ebd
+Description: Go implementation of the Docker Registry.
+ Docker registry stores Docker images.
+
+Package: gandalf-server
+Version: 0.4.1-2~precise1
+Architecture: amd64
+Maintainer: Globo.com <tsuru@corp.globo.com>
+Installed-Size: 12062
+Depends: upstart-job, git (>= 1:1.7.9.5~), git-daemon-sysvinit (>= 1:1.7.9.5~)
+Homepage: https://github.com/tsuru/gandalf
+Priority: extra
+Section: devel
+Filename: pool/main/g/gandalf-server/gandalf-server_0.4.1-2~precise1_amd64.deb
+Size: 3104866
+SHA256: 30561343aa8e0d6daf9cfe080d1513f9e2523323d791c4bb0d45504234dfa863
+SHA1: ed0761b9a2a79eea4c724c8bc3bfebfcf2a5b400
+MD5sum: c220fd1ce330424064c49f63a4a57d60
+Description: Gandalf is a Git repositories manager.
+ Gandalf manages Git access to repositories, by handling users, keys and
+ repositories.
+
+Package: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 89
+Depends: golang-go (>= 2:1.2.1-2tsuru1~precise1), golang-src (>= 2:1.2.1-2tsuru1~precise1), golang-doc (>= 2:1.2.1-2tsuru1~precise1)
+Conflicts: golang-weekly
+Replaces: golang-weekly
+Provides: golang-weekly
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang_1.2.1-2tsuru1~precise1_all.deb
+Size: 24726
+SHA256: 3ff859ef976c3737caf0dc2260efecdb12e42fa3aea15148473be33ebe73c259
+SHA1: c0a1cb471220fd8f7fad13270a0cdb069196b21f
+MD5sum: 66363774b4c4fa7c50d50b5bf77e390b
+Description: Go programming language compiler - metapackage
+ The Go programming language is an open source project to make
+ programmers more productive. Go is expressive, concise, clean, and
+ efficient. Its concurrency mechanisms make it easy to write programs
+ that get the most out of multicore and networked machines, while its
+ novel type system enables flexible and modular program construction.
+ Go compiles quickly to machine code yet has the convenience of
+ garbage collection and the power of run-time reflection. It's a
+ fast, statically typed, compiled language that feels like a
+ dynamically typed, interpreted language.
+ .
+ This package is a metapackage that, when installed, guarantees
+ that (most of) a full Go development environment is installed.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-doc
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 3231
+Depends: golang-go
+Conflicts: golang-weekly-doc
+Replaces: golang-weekly-doc
+Provides: golang-weekly-doc
+Homepage: http://golang.org/
+Priority: optional
+Section: doc
+Filename: pool/main/g/golang/golang-doc_1.2.1-2tsuru1~precise1_all.deb
+Size: 1940618
+SHA256: a06885c19dc5d11e266e64fc95e19590f08ac4a0e18e9ed121fa2e3ea3b88792
+SHA1: 6e34b05bc9c83f84d1a22bbc2a204861911ca6e7
+MD5sum: d54d0d9b122d80ac67b2bdaa051c5c9b
+Description: Go programming language compiler - documentation
+ The Go programming language is an open source project to make
+ programmers more productive. Go is expressive, concise, clean, and
+ efficient. Its concurrency mechanisms make it easy to write programs
+ that get the most out of multicore and networked machines, while its
+ novel type system enables flexible and modular program construction.
+ Go compiles quickly to machine code yet has the convenience of
+ garbage collection and the power of run-time reflection. It's a fast,
+ statically typed, compiled language that feels like a dynamically
+ typed, interpreted language.
+ .
+ This package provides the documentation for the Go programming
+ language. You can view the formatted documentation by running "godoc
+ --http=:6060", and then visiting http://localhost:6060/doc/install.html.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 45956
+Depends: libc6 (>= 2.14), debconf (>= 0.5) | debconf-2.0, perl, golang-src (>= 2:1.2.1-2tsuru1~precise1), golang-go-linux-amd64 (= 2:1.2.1-2tsuru1~precise1)
+Recommends: golang-go.tools
+Conflicts: golang-tools, golang-weekly-go, golang-weekly-tools
+Replaces: golang-tools, golang-weekly-go, golang-weekly-tools
+Provides: go-compiler, golang-tools, golang-weekly-go, golang-weekly-tools
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go_1.2.1-2tsuru1~precise1_amd64.deb
+Size: 7685532
+SHA256: aefd7dccc837a77087ca47b97cecbd103bc3ec094f1d6e444dde42197992f39e
+SHA1: bbbbc5837ef93cf5fc2d84c50b0f435955a4d73d
+MD5sum: 009d2b15fce4ef5e3dd669fb0f72f369
+Description: Go programming language compiler
+ The Go programming language is an open source project to make
+ programmers more productive. Go is expressive, concise, clean, and
+ efficient. Its concurrency mechanisms make it easy to write programs
+ that get the most out of multicore and networked machines, while its
+ novel type system enables flexible and modular program construction.
+ Go compiles quickly to machine code yet has the convenience of
+ garbage collection and the power of run-time reflection. It's a
+ fast, statically typed, compiled language that feels like a
+ dynamically typed, interpreted language.
+ .
+ This package provides an assembler, a compiler, and a linker for the
+ Go programming language. This is Google's implementation of the Go
+ tool chain.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-darwin-386
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 43109
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-darwin-386_1.2.1-2tsuru1~precise1_all.deb
+Size: 5851244
+SHA256: ce4c5f7b7e26f001cf67063e8251b44ed08d757e0f5548937e63fb344cff564a
+SHA1: 694d4fb32a46d1025d782bf40a68f557baf704fa
+MD5sum: fcf09825835a30cc28342421a1149e51
+Description: Go standard library compiled for darwin_386
+ This package contains the Go standard library,
+ compiled for darwin_386.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-darwin-amd64
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 42899
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-darwin-amd64_1.2.1-2tsuru1~precise1_all.deb
+Size: 5843082
+SHA256: ae5bf094226be1d0ae76f188b142841f3a14a8b592fb5725d98b7368bfb266b2
+SHA1: ce3dc6c3272b613404f6865e4ffa254c875fac9c
+MD5sum: 3933273e84b37b2b5555332deedf7f4d
+Description: Go standard library compiled for darwin_amd64
+ This package contains the Go standard library,
+ compiled for darwin_amd64.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-freebsd-386
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 43107
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-freebsd-386_1.2.1-2tsuru1~precise1_all.deb
+Size: 5849892
+SHA256: 7c55ce5abdb630f6458d1627172e935ba6788f1fcdd407e3612d3a8165ad213c
+SHA1: 21e2715c0fae95acaf5d159a0c394a4e92ffac9f
+MD5sum: 983910e2063bd0dddf7d18f47a3b1492
+Description: Go standard library compiled for freebsd_386
+ This package contains the Go standard library,
+ compiled for freebsd_386.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-freebsd-amd64
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 42705
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-freebsd-amd64_1.2.1-2tsuru1~precise1_all.deb
+Size: 5791880
+SHA256: fad92eb4329083dcc93c8ca59dd3371a1de0bf3ee3283d131986f5908a67d49b
+SHA1: de8e6dcc0f035e409bfd32404406ac5d942fb044
+MD5sum: 6b927690977836a0a41b603469cf9ab0
+Description: Go standard library compiled for freebsd_amd64
+ This package contains the Go standard library,
+ compiled for freebsd_amd64.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-freebsd-arm
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 57833
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-freebsd-arm_1.2.1-2tsuru1~precise1_all.deb
+Size: 6201062
+SHA256: 43716d39ad1a51e32f8a61fc966c86fe101aa4e2f288dce58c562c90d6048965
+SHA1: 95be90528f235da15773a9c0a7c223cc224cc121
+MD5sum: c22ff36e8970da526ed8a8621f86e37d
+Description: Go standard library compiled for freebsd_arm
+ This package contains the Go standard library,
+ compiled for freebsd_arm.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-linux-386
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 43216
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-linux-386_1.2.1-2tsuru1~precise1_amd64.deb
+Size: 5868102
+SHA256: d26428d7acf395446aa56e4d27ea20d16ef896384da40450cd3cfb7e80707628
+SHA1: 850e203de86db916e2e0f550966c8ebd72c03ad1
+MD5sum: d6b3af71f171a239c7e2489afce9fedc
+Description: Go standard library compiled for linux_386
+ This package contains the Go standard library,
+ compiled for linux_386.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-linux-amd64
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 93064
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-linux-amd64_1.2.1-2tsuru1~precise1_amd64.deb
+Size: 12546746
+SHA256: 1a97e8812b08ec3693d61b93050ae7cacf001c597bd028bebb1efdc1655c38cb
+SHA1: 795a840688d5e6a54f8e5b0e1cd291320e39aa0e
+MD5sum: 9a9832b88bf30e1af4c4eeec8503ddf1
+Description: Go standard library compiled for linux_amd64
+ This package contains the Go standard library,
+ compiled for linux_amd64.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-linux-arm
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 57977
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-linux-arm_1.2.1-2tsuru1~precise1_amd64.deb
+Size: 6220790
+SHA256: eb4304eaa4fcf67d1e954cb5e11e04508af8fa35af2f966564e99b78a76e286e
+SHA1: 85ee445886862b5b1949841fd7403fae6ed52170
+MD5sum: 175b6d581f7d29608aee87d47d2ae7c3
+Description: Go standard library compiled for linux_arm
+ This package contains the Go standard library,
+ compiled for linux_arm.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-netbsd-386
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 43061
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-netbsd-386_1.2.1-2tsuru1~precise1_all.deb
+Size: 5844042
+SHA256: c930a73ff1f9c9dbdd29af50bff62846f3b9dceb9772134a04bcb4819ba02285
+SHA1: 84cea87d9bd627b4301957248f7754b89fc09109
+MD5sum: c12e0c2adb4f55858da81e61ace013ad
+Description: Go standard library compiled for netbsd_386
+ This package contains the Go standard library,
+ compiled for netbsd_386.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-netbsd-amd64
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 42660
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-netbsd-amd64_1.2.1-2tsuru1~precise1_all.deb
+Size: 5784542
+SHA256: f6f3ac174ee3a529287cf2def7c1280dff90f008daeefe04258db98575dff45e
+SHA1: dc241b9d515d7c7835bbc55ef7fd65f6af684ec8
+MD5sum: 48f19a694cd20e2c30ffef02568094d0
+Description: Go standard library compiled for netbsd_amd64
+ This package contains the Go standard library,
+ compiled for netbsd_amd64.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-windows-386
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 43560
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-windows-386_1.2.1-2tsuru1~precise1_all.deb
+Size: 5918450
+SHA256: 2ae5c623acceb36eaaf241d2401e34a6c3c296a5d50bff30b4550dd7664a66e9
+SHA1: b9eae6fffb2cb1392220b65bd31f84878a2c164d
+MD5sum: a9adf58c139b9d246873fcf96e438751
+Description: Go standard library compiled for windows_386
+ This package contains the Go standard library,
+ compiled for windows_386.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-go-windows-amd64
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 43356
+Breaks: golang-go (<< 2:1.1-2)
+Replaces: golang-go (<< 2:1.1-2)
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-go-windows-amd64_1.2.1-2tsuru1~precise1_all.deb
+Size: 5916772
+SHA256: 49b16953460aa4d0dd4a69d51c1caa90ecc0c269ff50dee1072dc34fb8bf03f2
+SHA1: ace5fb474e8813d2b22623c9248fc83e0753683b
+MD5sum: 7814a072c647ea34b497b2f8783365c9
+Description: Go standard library compiled for windows_amd64
+ This package contains the Go standard library,
+ compiled for windows_amd64.
+ .
+ This package is just one of a number of packages, each providing the Go
+ standard library for a specific operating system/architecture combination.
+ Go supports cross-compilation, so each of these packages is useful on any
+ architecture.
+ .
+ The files contained in this package are independent of the host architecture,
+ that is, you can use golang-go-linux-amd64 to generate a binary for
+ linux_amd64, even though you are executing the Go compiler on linux_386.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-mode
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 183
+Depends: emacs23 | emacsen, emacsen-common (>= 1.4.14)
+Suggests: golang-go
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-mode_1.2.1-2tsuru1~precise1_all.deb
+Size: 37902
+SHA256: f106b11a9e6e235c3dc5ca03cf9e3270452431853017350f170eb19b68a9e944
+SHA1: d8feeaef19442a28ce9263e62406a557f6c1ad1d
+MD5sum: c4766432b7755dcf49ab27880eda02d7
+Description: Go programming language - mode for GNU Emacs
+ This package provides a GNU Emacs major mode for editing code in
+ Google's Go programming language.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: golang-src
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 26139
+Conflicts: golang-weekly-src
+Breaks: golang-go (<< 2:1-3~)
+Replaces: golang-go (<< 2:1-3~), golang-weekly-src
+Provides: golang-weekly-src
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/golang-src_1.2.1-2tsuru1~precise1_amd64.deb
+Size: 4785892
+SHA256: 1fdbaf1addb5faa7c85523c6767fc4bdfaa186bdab885ae8b844ffc5aad0a66e
+SHA1: b96fd4b789ea050a2a3b4eb3e8ebadb569104fea
+MD5sum: cd304ac43565ad92a283ca4850c8e74b
+Description: Go programming language compiler - source files
+ The Go programming language is an open source project to make
+ programmers more productive. Go is expressive, concise, clean, and
+ efficient. Its concurrency mechanisms make it easy to write programs
+ that get the most out of multicore and networked machines, while its
+ novel type system enables flexible and modular program construction.
+ Go compiles quickly to machine code yet has the convenience of
+ garbage collection and the power of run-time reflection. It's a
+ fast, statically typed, compiled language that feels like a
+ dynamically typed, interpreted language.
+ .
+ This package provides the Go programming language source files needed
+ for godoc and goinstall.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: hipache-hchecker
+Version: 0.2.4.2-1~precise1
+Architecture: amd64
+Maintainer: Globo.com <tsuru@corp.globo.com>
+Installed-Size: 5022
+Depends: upstart-job
+Homepage: https://github.com/morpheu/hipache-hchecker
+Priority: extra
+Section: devel
+Filename: pool/main/h/hipache-hchecker/hipache-hchecker_0.2.4.2-1~precise1_amd64.deb
+Size: 1332744
+SHA256: 024cb46a4d95eab56babedd7f9f37792b949b7f1b50c1452f416b9b4e069a31c
+SHA1: ac6c842bfb60cc0bc7e0cc0e6570fc0a0e101892
+MD5sum: b3dfd231147b3ddbf3027857ece240f2
+Description: Hipache Health-Checker.
+ This is an active health-checker for the Hipache proxy solution. The checker
+ will check the backends at a regular interval and it will update Hipache's
+ Redis to mark them as dead (or alive) almost instantly.
+
+Package: kate-syntax-go
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 111
+Depends: kate
+Suggests: golang-go
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/kate-syntax-go_1.2.1-2tsuru1~precise1_all.deb
+Size: 25660
+SHA256: ee19b4a2e3d10f7eaaeed0e419d6a1c9f92a3d1636a07dd521356c788369ab4b
+SHA1: 0dbd35c882ade8dd65c1087b345cf835a1e0b603
+MD5sum: 13da61daf0eead8c63b090ed1ce569b7
+Description: Go programming language - Kate highlighting syntax files
+ This package provides syntax files for the Kate editor for editing code
+ in Google's Go programming language.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+
+Package: libdevmapper-dev
+Source: lvm2 (2.02.103-1tsuru1~precise1)
+Version: 2:1.02.82-git-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 133
+Depends: libdevmapper1.02.1 (= 2:1.02.82-git-1tsuru1~precise1), libdevmapper-event1.02.1 (= 2:1.02.82-git-1tsuru1~precise1), libselinux1-dev, libudev-dev
+Homepage: http://sources.redhat.com/lvm2/
+Priority: optional
+Section: libdevel
+Filename: pool/main/l/lvm2/libdevmapper-dev_1.02.82-git-1tsuru1~precise1_amd64.deb
+Size: 53236
+SHA256: 9255752432f5fcc1ac777e50de782c8e7f0be50542986952e8a8c16d0669c621
+SHA1: 121f4fd5b484abeea1fa747947ccf66174eefe26
+MD5sum: e5ea3917355649e591f2c2a36c4d56a4
+Description: The Linux Kernel Device Mapper header files
+ The Linux Kernel Device Mapper is the LVM (Linux Logical Volume Management)
+ Team's implementation of a minimalistic kernel-space driver that handles
+ volume management, while keeping knowledge of the underlying device layout
+ in user-space.  This makes it useful for not only LVM, but EVMS, software
+ raid, and other drivers that create "virtual" block devices.
+ .
+ This package contains the (user-space) header files for accessing the
+ device-mapper; it allow usage of the device-mapper through a clean,
+ consistent interface (as opposed to through kernel ioctls).
+Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
+
+Package: libdevmapper-event1.02.1
+Source: lvm2 (2.02.103-1tsuru1~precise1)
+Version: 2:1.02.82-git-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 81
+Depends: libc6 (>= 2.15), libdevmapper1.02.1 (>= 2:1.02.82-2.02.103)
+Homepage: http://sources.redhat.com/lvm2/
+Priority: optional
+Section: libs
+Filename: pool/main/l/lvm2/libdevmapper-event1.02.1_1.02.82-git-1tsuru1~precise1_amd64.deb
+Size: 40076
+SHA256: d5e554c338c1ba2fdca01bdce114b4259393a71a36f51dce53833b4d47466046
+SHA1: d3fefb2e89f4e8392539d509c827659781894d3f
+MD5sum: 0e8e8fe34a334a11fe2d547e8abf65b1
+Description: The Linux Kernel Device Mapper userspace library
+ The Linux Kernel Device Mapper is the LVM (Linux Logical Volume Management)
+ Team's implementation of a minimalistic kernel-space driver that handles
+ volume management, while keeping knowledge of the underlying device layout
+ in user-space.  This makes it useful for not only LVM, but EVMS, software
+ raid, and other drivers that create "virtual" block devices.
+ .
+ This package contains the userspace library to help with event monitoring
+ for devmapper devices, in conjunction with the dmevent daemon.
+Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
+
+Package: libdevmapper1.02.1
+Source: lvm2 (2.02.103-1tsuru1~precise1)
+Version: 2:1.02.82-git-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 309
+Depends: libc6 (>= 2.14), libselinux1 (>= 2.0.65), libudev0 (>= 147), dmsetup (>= 2:1.02.82-git-1tsuru1~precise1)
+Breaks: lvm2 (<< 2.02.66)
+Provides: libdevmapper
+Homepage: http://sources.redhat.com/lvm2/
+Priority: required
+Section: libs
+Filename: pool/main/l/lvm2/libdevmapper1.02.1_1.02.82-git-1tsuru1~precise1_amd64.deb
+Size: 144694
+SHA256: d3cd912633569b7850c13045352fc0a4687f2486f782879f2d943ce74e6b86ef
+SHA1: 588fe29eafe7f0001e95ade86dc99dd47a34232b
+MD5sum: 36501f6ce0ef2397b5a7ebbbc25aca76
+Description: The Linux Kernel Device Mapper userspace library
+ The Linux Kernel Device Mapper is the LVM (Linux Logical Volume Management)
+ Team's implementation of a minimalistic kernel-space driver that handles
+ volume management, while keeping knowledge of the underlying device layout
+ in user-space.  This makes it useful for not only LVM, but EVMS, software
+ raid, and other drivers that create "virtual" block devices.
+ .
+ This package contains the (user-space) shared library for accessing the
+ device-mapper; it allows usage of the device-mapper through a clean,
+ consistent interface (as opposed to through kernel ioctls).
+Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
+
+Package: liblvm2-dev
+Source: lvm2
+Version: 2.02.103-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 164
+Depends: liblvm2app2.2 (= 2.02.103-1tsuru1~precise1), liblvm2cmd2.02 (= 2.02.103-1tsuru1~precise1), libdevmapper-dev
+Homepage: http://sources.redhat.com/lvm2/
+Priority: optional
+Section: libdevel
+Filename: pool/main/l/lvm2/liblvm2-dev_2.02.103-1tsuru1~precise1_amd64.deb
+Size: 90070
+SHA256: 536b4a5eb88731cd2902186b5c4ebd12fde57d35565c6f27099275f436f17055
+SHA1: f7bec1863a7ccb364e86ef526d0bc0a5097a1b44
+MD5sum: d36da54abbb035de6bc7f160e2737857
+Description: LVM2 libraries - development files
+ This package contains files needed to develop applications that use the
+ lvm2app library.
+Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
+
+Package: liblvm2app2.2
+Source: lvm2
+Version: 2.02.103-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 854
+Depends: libc6 (>= 2.14), libdevmapper-event1.02.1 (>= 2:1.02.82-2.02.103), libdevmapper1.02.1 (>= 2:1.02.82-2.02.103), libudev0 (>= 147)
+Homepage: http://sources.redhat.com/lvm2/
+Priority: optional
+Section: libs
+Filename: pool/main/l/lvm2/liblvm2app2.2_2.02.103-1tsuru1~precise1_amd64.deb
+Size: 416544
+SHA256: 09623aff538dd707f1948ae9579299ae1538ba582886ad261e6aaf1d12e16d00
+SHA1: 4aa73d7b1c6c35e04827363e4c10498b3e0fe4f0
+MD5sum: dfcaea9b943fde043d11a9a7475d755a
+Description: LVM2 application library
+ This package contains the lvm2app shared library. It allows easier access
+ to the basic LVM objects and provides functions to enumerate, create or
+ modify them.
+Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
+
+Package: liblvm2cmd2.02
+Source: lvm2
+Version: 2.02.103-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 1119
+Depends: libc6 (>= 2.14), libdevmapper-event1.02.1 (>= 2:1.02.82-2.02.103), libdevmapper1.02.1 (>= 2:1.02.82-2.02.103), libudev0 (>= 147)
+Homepage: http://sources.redhat.com/lvm2/
+Priority: optional
+Section: libs
+Filename: pool/main/l/lvm2/liblvm2cmd2.02_2.02.103-1tsuru1~precise1_amd64.deb
+Size: 522400
+SHA256: edd67e36d31d5a5d9321a9fb03cb98da8e5bc62820ae3aa7309e1a841655eef9
+SHA1: 569a0d6ea68584e5e09f2f47614127c8d49c1bae
+MD5sum: e57df3160f91fb84063223fd91751333
+Description: LVM2 command library
+ This package contains the lvm2cmd shared library.
+Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
+
+Package: lvm2
+Version: 2.02.103-1tsuru1~precise1
+Architecture: amd64
+Maintainer: Ubuntu Core Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 1362
+Depends: libc6 (>= 2.14), libdevmapper-event1.02.1 (>= 2:1.02.82-2.02.103), libdevmapper1.02.1 (>= 2:1.02.82-2.02.103), libreadline6 (>= 6.0), libudev0 (>= 147), lsb-base, dmsetup (>> 2:1.02.47), watershed (>= 2)
+Conflicts: lvm-common
+Breaks: grub-common (<< 1.98+20100527-1)
+Replaces: lvm-common
+Homepage: http://sources.redhat.com/lvm2/
+Priority: optional
+Section: admin
+Filename: pool/main/l/lvm2/lvm2_2.02.103-1tsuru1~precise1_amd64.deb
+Size: 673546
+SHA256: b3d6d3199a040f4685cccdbcf826a77f0597a562d4f22fd54e3884afe79e0ab5
+SHA1: a1fbdfd8dcf881d3979a0a4696a39667611aa93b
+MD5sum: 02de3d6e8b9d1e45c96589a531bcb56a
+Description: The Linux Logical Volume Manager
+ This is LVM2, the rewrite of The Linux Logical Volume Manager.  LVM
+ supports enterprise level volume management of disk and disk subsystems
+ by grouping arbitrary disks into volume groups. The total capacity of
+ volume groups can be allocated to logical volumes, which are accessed as
+ regular block devices.
+Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
+
+Package: lxc-docker
+Version: 1.1.1-0tsuru1~precise1
+Architecture: amd64
+Maintainer: Tsuru Team <tsuru@corp.globo.com>
+Installed-Size: 24286
+Depends: upstart-job, lxc, bsdtar, aufs-tools, libdevmapper1.02.1 (>= 2:1.02.82), libsqlite3-0
+Homepage: http://github.com/dotcloud/docker
+Priority: extra
+Section: misc
+Filename: pool/main/l/lxc-docker/lxc-docker_1.1.1-0tsuru1~precise1_amd64.deb
+Size: 5819786
+SHA256: a57eea3d26d1a77884dd5104fb79b769e96577ad4278ea13f3512407fb2b6b38
+SHA1: daa4e092725999086415f5396f6098d1108ff1a3
+MD5sum: 4d87994c6afa72d6fb066e404bdc65c2
+Description: lxc-docker is a Linux container runtime
+ Docker complements LXC with a high-level API which operates at the process
+ level. It runs unix processes with strong guarantees of isolation and
+ repeatability across servers.
+ Docker is a great building block for automating distributed systems:
+ large-scale web deployments, database clusters, continuous deployment systems,
+ private PaaS, service-oriented architectures, etc.
+
+Package: node-hipache
+Version: 0.2.5-4~precise1
+Architecture: amd64
+Maintainer: Globo.com <tsuru@corp.globo.com>
+Installed-Size: 2471
+Depends: upstart-job, nodejs-legacy (>= 0.10.25)
+Homepage: https://github.com/dotcloud/hipache
+Priority: extra
+Section: devel
+Filename: pool/main/n/node-hipache/node-hipache_0.2.5-4~precise1_amd64.deb
+Size: 500602
+SHA256: 569d9d771744c7eac387f61f71df5bb7a7da4a56c5d96f948437cc8267c8e1d4
+SHA1: 54ffd2d62fc805bf4fa86fae8eb290feaef883bb
+MD5sum: 18ff4ec5fd76557f41d37ab1d1d2f8d2
+Description: Hipache is a distributed HTTP(S) proxy
+ Hipache is a distributed proxy designed to route high volumes of http and
+ websocket traffic to unusually large numbers of virtual hosts, in a highly
+ dynamic topology where backends are added and removed several times per second.
+ It is particularly well-suited for PaaS (platform-as-a-service) and other
+ environments that are both business-critical and multi-tenant.
+
+Package: nodejs
+Version: 0.10.26.3-0tsuru1~precise1
+Architecture: amd64
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Installed-Size: 13924
+Depends: libc6 (>= 2.15), libgcc1 (>= 1:4.1.1), libssl1.0.0 (>= 1.0.1), libstdc++6 (>= 4.1.1), zlib1g (>= 1:1.1.4)
+Conflicts: npm
+Homepage: http://nodejs.org/
+Priority: extra
+Section: web
+Filename: pool/main/n/nodejs/nodejs_0.10.26.3-0tsuru1~precise1_amd64.deb
+Size: 4856328
+SHA256: 31c6b42f084256e882abe59465769c41265a1e00cca3107bf54730aa9d305418
+SHA1: eff42a11dbddcd6291558f9a061bc8e3475f0378
+MD5sum: eeb3e63845e6763cf0c123aa1c65607c
+Description: evented I/O for V8 javascript
+ Node.js is a platform built on Chrome's JavaScript runtime for easily
+ building fast, scalable network applications. Node.js uses an
+ event-driven, non-blocking I/O model that makes it lightweight and
+ efficient, perfect for data-intensive real-time applications that run
+ across distributed devices.
+ .
+ Node.js is bundled with several useful libraries to handle server
+ tasks:
+ .
+ System, Events, Standard I/O, Modules, Timers, Child Processes, POSIX,
+ HTTP, Multipart Parsing, TCP, DNS, Assert, Path, URL, Query Strings.
+
+Package: nodejs-dbg
+Source: nodejs
+Version: 0.10.26.3-0tsuru1~precise1
+Architecture: amd64
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Installed-Size: 78506
+Depends: nodejs (= 0.10.26.3-0tsuru1~precise1)
+Recommends: libv8-3.14-dbg
+Conflicts: npm
+Homepage: http://nodejs.org/
+Priority: extra
+Section: debug
+Filename: pool/main/n/nodejs/nodejs-dbg_0.10.26.3-0tsuru1~precise1_amd64.deb
+Size: 31271920
+SHA256: 194748a291901ed8b2629809f5202915e7b4864eb8430c37aceb9b0b7f952543
+SHA1: 4e19c6fbf479a811292b7bd41006e87f8b3c94bf
+MD5sum: 218ba5cf1890931923eb6e1e1ede3291
+Description: evented I/O for V8 javascript (debug)
+ Node.js is a platform built on Chrome's JavaScript runtime for easily
+ building fast, scalable network applications. Node.js uses an
+ event-driven, non-blocking I/O model that makes it lightweight and
+ efficient, perfect for data-intensive real-time applications that run
+ across distributed devices.
+ .
+ This package contains the debugging symbols.
+
+Package: nodejs-dev
+Source: nodejs
+Version: 0.10.26.3-0tsuru1~precise1
+Architecture: amd64
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Installed-Size: 937
+Depends: python, libssl-dev (>= 1.0.0g), nodejs (= 0.10.26.3-0tsuru1~precise1)
+Homepage: http://nodejs.org/
+Priority: extra
+Section: devel
+Filename: pool/main/n/nodejs/nodejs-dev_0.10.26.3-0tsuru1~precise1_amd64.deb
+Size: 315678
+SHA256: 61d360e6ad5fc8668601a093fa64ca6098ff446079e7c11fbcf3f18e9cd289d3
+SHA1: b54d48f9dba767bb764e8810aa0f295df920d08d
+MD5sum: 0843f7201f36fd53932faf8d14f8a6fc
+Description: evented I/O for V8 javascript (development files)
+ Node.js is a platform built on Chrome's JavaScript runtime for easily
+ building fast, scalable network applications. Node.js uses an
+ event-driven, non-blocking I/O model that makes it lightweight and
+ efficient, perfect for data-intensive real-time applications that run
+ across distributed devices.
+ .
+ This package is needed to build plugins.
+
+Package: nodejs-legacy
+Source: nodejs
+Version: 0.10.26.3-0tsuru1~precise1
+Architecture: all
+Maintainer: Debian Javascript Maintainers <pkg-javascript-devel@lists.alioth.debian.org>
+Installed-Size: 119
+Depends: nodejs (>= 0.10.25-0ubuntu1ppa3)
+Conflicts: node, nodejs (<< 0.10.25), npm
+Homepage: http://nodejs.org/
+Priority: extra
+Section: web
+Filename: pool/main/n/nodejs/nodejs-legacy_0.10.26.3-0tsuru1~precise1_all.deb
+Size: 75378
+SHA256: bf37e8e52b0ca2921c5a3fa1f61e8c5fb4fbdb1c31bc3719cfe7508f850d3972
+SHA1: 386b0234a9d0e6010bb9cde4a40c130b31a87e3e
+MD5sum: 89378267552242f305ae9c99cbdc7078
+Description: evented I/O for V8 javascript (legacy symlink)
+ Node.js is a platform built on Chrome's JavaScript runtime for easily
+ building fast, scalable network applications. Node.js uses an
+ event-driven, non-blocking I/O model that makes it lightweight and
+ efficient, perfect for data-intensive real-time applications that run
+ across distributed devices.
+ .
+ This package contains a symlink for legacy Node.js code requiring
+ binary to be /usr/bin/node (not /usr/bin/nodejs as provided in Debian).
+ .
+ No other Debian packages should depend on this package.  For more
+ information, see
+ <http://lists.debian.org/debian-devel-announce/2012/07/msg00002.html>
+
+Package: serf
+Version: 0.4.1-1~precise1
+Architecture: amd64
+Maintainer: Globo.com <tsuru@corp.globo.com>
+Installed-Size: 9621
+Depends: upstart-job
+Homepage: http://github.com/globocom/serf
+Priority: extra
+Section: devel
+Filename: pool/main/s/serf/serf_0.4.1-1~precise1_amd64.deb
+Size: 2278832
+SHA256: 26010fae491c5f1b4b55afd441d44fda9fec09a96a6aa9e460e8fece08dd9539
+SHA1: ed572bb764275278cae54e9dc027242cb1449710
+MD5sum: 267cd4dacc01f608ce06c401d08fbb28
+Description: Serf is a decentralized solution for service discovery and orchestration.
+ Serf is an efficient and lightweight gossip protocol is used to communicate with other
+ nodes. Serf can detect node failures and notify the rest of the cluster. An
+ event system is built on top of Serf, letting you use Serf's gossip protocol to
+ propagate events such as deploys, configuration changes, etc. Serf is
+ completely masterless with no single point of failure.
+
+Package: tsuru-admin
+Version: 0.5.0+1SNAPSHOT20140812072834+0000-1~precise1
+Architecture: amd64
+Maintainer: Globo.com <tsuru@corp.globo.com>
+Installed-Size: 11125
+Homepage: http://tsuru.io
+Priority: extra
+Section: devel
+Filename: pool/main/t/tsuru-admin/tsuru-admin_0.5.0+1SNAPSHOT20140812072834+0000-1~precise1_amd64.deb
+Size: 2677778
+SHA256: 145d491c2c813fa913639fb0d23389bc2adebcccfe92b12cf711f0c875307bcd
+SHA1: c1d4dcc6a0fcc81b5deee1f1a21605182cd84724
+MD5sum: 687a60d21af86bd1e2a2856fad87ffbe
+Description: tsuru-admin is the command line interface used by cloud admins
+ Tsuru is an open source platform as a service software. This package installs
+ the client used by cloud administrators to communicate with tsuru server.
+
+Package: tsuru-client
+Version: 0.11.0-2~precise1
+Architecture: amd64
+Maintainer: Globo.com <tsuru@corp.globo.com>
+Installed-Size: 6725
+Homepage: http://tsuru.io
+Priority: extra
+Section: devel
+Filename: pool/main/t/tsuru-client/tsuru-client_0.11.0-2~precise1_amd64.deb
+Size: 1711312
+SHA256: 7cffc76e385fd079c2de63dcc52a54f96af98282c259884a3e2025aeac120ec5
+SHA1: 4de92b7a4692e5d465d71d8ffd0dd9f50ad69407
+MD5sum: 9f4ce097c58a4003f8a3ac4dfa14eb85
+Description: tsuru is the command line interface for the tsuru server
+ Tsuru is an open source platform as a service software. This package installs
+ the client used by application developers to communicate with tsuru server.
+
+Package: tsuru-mongoapi
+Version: 0.2.0-2~precise1
+Architecture: amd64
+Maintainer: Globo.com <tsuru@corp.globo.com>
+Installed-Size: 5652
+Homepage: https://github.com/tsuru/mongoapi
+Priority: extra
+Section: devel
+Filename: pool/main/t/tsuru-mongoapi/tsuru-mongoapi_0.2.0-2~precise1_amd64.deb
+Size: 1487934
+SHA256: 5f6ec16b099d11b55a866e5b1bfd6b21bac9413dd3bf8cbbec39719d8e8395d7
+SHA1: 02634615e89a1fbd3bfd19571e66be62038fe9a6
+MD5sum: 6e08ec117336dde0b2373aea7b3d2b67
+Description: mongoapi is a MongoDB service API for the Tsuru PaaS
+ It provides basic operations for managing MongoDB instances and binding to
+ Tsuru applications, implementing the service API for Tsuru.
+
+Package: tsuru-server
+Version: 0.6.0+1SNAPSHOT20140812074722+0000-1~precise1
+Architecture: amd64
+Maintainer: Globo.com <tsuru@corp.globo.com>
+Installed-Size: 11424
+Depends: upstart-job, libsqlite3-0, openssh-client
+Homepage: http://tsuru.io
+Priority: extra
+Section: devel
+Filename: pool/main/t/tsuru-server/tsuru-server_0.6.0+1SNAPSHOT20140812074722+0000-1~precise1_amd64.deb
+Size: 2741760
+SHA256: 9a0ab71c91c8bb94484b98d1b3931bb81053879428de1ad75738c241611b0048
+SHA1: 8bb9f23aeec941ab11d72aec573111cbb31c8727
+MD5sum: 1a4e030422da6766f78d114705be5d69
+Description: tsuru-server is the server side of the Tsuru PaaS.
+ This package includes two services: Tsuru API and Tsuru SSH agent. All jobs
+ are disabled by default, to enable any of them, edit the file
+ /etc/default/tsuru-server.
+
+Package: vim-syntax-go
+Source: golang
+Version: 2:1.2.1-2tsuru1~precise1
+Architecture: all
+Maintainer: Ubuntu Developers <ubuntu-devel-discuss@lists.ubuntu.com>
+Installed-Size: 142
+Depends: vim
+Recommends: vim-addon-manager
+Suggests: golang-go
+Homepage: http://golang.org/
+Priority: optional
+Section: devel
+Filename: pool/main/g/golang/vim-syntax-go_1.2.1-2tsuru1~precise1_all.deb
+Size: 30432
+SHA256: d61fda5e986620e9658c7c560ef6e0069b62dad8d527152d4c69db5c325ee396
+SHA1: 49ab9b7b8f61090a5583fd04cf1324758629deec
+MD5sum: 6f42e483df84e1ab58b6fe7eda2c12fe
+Description: Go programming language - Vim highlighting syntax files
+ This package provides syntax files for the Vim editor for editing code
+ in Google's Go programming language.
+Original-Maintainer: Michael Stapelberg <stapelberg@debian.org>
+

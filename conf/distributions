@@ -1,0 +1,27 @@
+Origin: tsuru-deb
+Label: tsuru-deb
+Codename: precise
+Architectures: i386 amd64 source
+Components: main contrib
+UDebComponents: main contrib
+Description: tsuru-deb local repository
+SignWith: yes
+
+Origin: tsuru-deb
+Label: tsuru-deb
+Codename: trusty
+Architectures: i386 amd64 source
+Components: main contrib
+UDebComponents: main contrib
+Description: tsuru-deb local repository
+SignWith: yes
+
+Origin: tsuru-deb
+Label: tsuru-deb
+Codename: wheezy-backports
+Architectures: i386 amd64 source
+Components: main contrib
+UDebComponents: main contrib
+Description: tsuru-deb local repository
+SignWith: yes
+
