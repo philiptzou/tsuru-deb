@@ -1,16 +1,16 @@
 Package: archive-server
-Version: 0.1.1-2~bpo70+1
+Version: 0.1.1-3~bpo70+1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
-Installed-Size: 5889
+Installed-Size: 5895
 Homepage: https://github.com/tsuru/archive-server
 Priority: extra
 Section: devel
-Filename: pool/main/a/archive-server/archive-server_0.1.1-2~bpo70+1_amd64.deb
-Size: 1531720
-SHA256: bca0a4c5e60cafcd425a966d36ece17ff42d9cb3829a5ae3f30309fe202580c3
-SHA1: e7e46a51286bdcffb5fe920c6ea13b8a20139748
-MD5sum: 78c6e125843fec59f4d14b4cf11e01bd
+Filename: pool/main/a/archive-server/archive-server_0.1.1-3~bpo70+1_amd64.deb
+Size: 1533280
+SHA256: 1de1e4c224eb5820ecd04f7303d560b121923ac1884bba1be827a101497e9f17
+SHA1: 412c6dcbab682ddeebdaf7f4a45459fcf6ab4ca0
+MD5sum: dc8553d6657fe7aff7c08d69dd29eafb
 Description: archive-server is an HTTP server used for storing git-archives.
  It can generate new git archives on demand, and serve they on unique requests.
 
