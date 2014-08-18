@@ -1,16 +1,16 @@
 Package: archive-server
-Version: 0.1.1-3~bpo70+1
+Version: 0.1.1+1SNAPSHOT20140818063952+0000-1~bpo70+1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
-Installed-Size: 5895
+Installed-Size: 5910
 Homepage: https://github.com/tsuru/archive-server
 Priority: extra
 Section: devel
-Filename: pool/main/a/archive-server/archive-server_0.1.1-3~bpo70+1_amd64.deb
-Size: 1533280
-SHA256: 1de1e4c224eb5820ecd04f7303d560b121923ac1884bba1be827a101497e9f17
-SHA1: 412c6dcbab682ddeebdaf7f4a45459fcf6ab4ca0
-MD5sum: dc8553d6657fe7aff7c08d69dd29eafb
+Filename: pool/main/a/archive-server/archive-server_0.1.1+1SNAPSHOT20140818063952+0000-1~bpo70+1_amd64.deb
+Size: 1535320
+SHA256: 11ccf6850acf15961fb00e24fac31ab894602fc3991c527fe795c9c8561dd8f9
+SHA1: edea2537ee260da7ef04f1b32d8ba6e275c11f87
+MD5sum: 67755d52075875044edec80f3f20d252
 Description: archive-server is an HTTP server used for storing git-archives.
  It can generate new git archives on demand, and serve they on unique requests.
 
@@ -120,19 +120,19 @@ Description: Go implementation of the Docker Registry.
  Docker registry stores Docker images.
 
 Package: gandalf-server
-Version: 0.4.1-2~bpo70+1
+Version: 0.4.1+1SNAPSHOT20140818074629+0000-1~bpo70+1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
-Installed-Size: 12064
+Installed-Size: 12684
 Depends: git (>= 1:1.7.9.5~), git-daemon-sysvinit (>= 1:1.7.9.5~)
 Homepage: https://github.com/tsuru/gandalf
 Priority: extra
 Section: devel
-Filename: pool/main/g/gandalf-server/gandalf-server_0.4.1-2~bpo70+1_amd64.deb
-Size: 3105230
-SHA256: eb70c9eecca1a9f3deb3ba121c2b0fd5721913857006345b5b75fc2927c5546a
-SHA1: 6a687ff1aab29e62456aba58a46abd79d14e2c4b
-MD5sum: 2482cb0a26375b9fe7bfe3edc5e0ee24
+Filename: pool/main/g/gandalf-server/gandalf-server_0.4.1+1SNAPSHOT20140818074629+0000-1~bpo70+1_amd64.deb
+Size: 3253240
+SHA256: 64ebf80727596eb7d0664f935c13031dec44d84d65a6c11e2e6f7a977d7d4abb
+SHA1: c9184d371b0f0c9e723f2cd02f10a36e6410dbb3
+MD5sum: 8f35d56781cd617d4a211560fbc3dae9
 Description: Gandalf is a Git repositories manager.
  Gandalf manages Git access to repositories, by handling users, keys and
  repositories.
@@ -1030,18 +1030,18 @@ Description: Serf is a decentralized solution for service discovery and orchestr
  completely masterless with no single point of failure.
 
 Package: tsuru-admin
-Version: 0.5.0+1SNAPSHOT20140812072834+0000-1~bpo70+1
+Version: 0.5.1+1SNAPSHOT20140818085231+0000-1~bpo70+1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
-Installed-Size: 11125
+Installed-Size: 11149
 Homepage: http://tsuru.io
 Priority: extra
 Section: devel
-Filename: pool/main/t/tsuru-admin/tsuru-admin_0.5.0+1SNAPSHOT20140812072834+0000-1~bpo70+1_amd64.deb
-Size: 2677508
-SHA256: 286647c5a69e8ad321944d07c7c583afcba725d2d04f0f96bebd536243701b3b
-SHA1: 9f235523d527a78cb974cbf9cee93691ed69b07c
-MD5sum: 3f5553e997102adc214b080c80560d66
+Filename: pool/main/t/tsuru-admin/tsuru-admin_0.5.1+1SNAPSHOT20140818085231+0000-1~bpo70+1_amd64.deb
+Size: 2682624
+SHA256: de32b53cac3f00223e1599c1d034507d9de296a7934d966787173195086883c1
+SHA1: dddbfd72e1b2353d66477f9085c0dc08677ba9fc
+MD5sum: e61f09e7ac8aa0e1937476743572e9f6
 Description: tsuru-admin is the command line interface used by cloud admins
  Tsuru is an open source platform as a service software. This package installs
  the client used by cloud administrators to communicate with tsuru server.
@@ -1064,36 +1064,36 @@ Description: tsuru is the command line interface for the tsuru server
  the client used by application developers to communicate with tsuru server.
 
 Package: tsuru-mongoapi
-Version: 0.2.0-2~bpo70+1
+Version: 0.2.0+1SNAPSHOT20140818084759+0000-1~bpo70+1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
 Installed-Size: 5652
 Homepage: https://github.com/tsuru/mongoapi
 Priority: extra
 Section: devel
-Filename: pool/main/t/tsuru-mongoapi/tsuru-mongoapi_0.2.0-2~bpo70+1_amd64.deb
-Size: 1487662
-SHA256: 20ee776bc11138ea13247110d00bce506c63b14027d1e3c36b271f27f56697fc
-SHA1: 7413ed390dde5c0e3b82ac0d8f9d865b5b46da78
-MD5sum: fd7942befe3798120feb33f4f7d79529
+Filename: pool/main/t/tsuru-mongoapi/tsuru-mongoapi_0.2.0+1SNAPSHOT20140818084759+0000-1~bpo70+1_amd64.deb
+Size: 1487764
+SHA256: 42aca6433783cb46e09d56f835d138779d619b1875d9c8253bc1af7a206102af
+SHA1: 19363f82fd62f8e2894a8992ec05c2243f001cbe
+MD5sum: 97ea3f610f35f203fa741e36969d02d5
 Description: mongoapi is a MongoDB service API for the Tsuru PaaS
  It provides basic operations for managing MongoDB instances and binding to
  Tsuru applications, implementing the service API for Tsuru.
 
 Package: tsuru-server
-Version: 0.6.0+1SNAPSHOT20140812074722+0000-1~bpo70+1
+Version: 0.6.0+1SNAPSHOT20140818085839+0000-1~bpo70+1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
-Installed-Size: 11428
+Installed-Size: 11445
 Depends: libsqlite3-0, openssh-client
 Homepage: http://tsuru.io
 Priority: extra
 Section: devel
-Filename: pool/main/t/tsuru-server/tsuru-server_0.6.0+1SNAPSHOT20140812074722+0000-1~bpo70+1_amd64.deb
-Size: 2742588
-SHA256: 48d6a41fcf9609f3889d84384b03d672bd5f67a0661641ee424edeed7ccd1d4c
-SHA1: 9d750b84ff4bfee177061221b86f7acf49b29dd9
-MD5sum: 7db011598b8e48bdede7c83493a7e7f6
+Filename: pool/main/t/tsuru-server/tsuru-server_0.6.0+1SNAPSHOT20140818085839+0000-1~bpo70+1_amd64.deb
+Size: 2745946
+SHA256: 09ca8c6a7d718e123d0cb76aa38af4be8b922a8563d8d8b15e923bf235256d2b
+SHA1: 8dc2818e608f5ca62aa3dd30545196cc68ecfaa9
+MD5sum: 072e3474ac1655fb93c5d6da78edc8f7
 Description: tsuru-server is the server side of the Tsuru PaaS.
  This package includes two services: Tsuru API and Tsuru SSH agent. All jobs
  are disabled by default, to enable any of them, edit the file
