@@ -85,19 +85,19 @@ Description: The Linux Kernel Device Mapper userspace library
 Original-Maintainer: Debian LVM Team <pkg-lvm-maintainers@lists.alioth.debian.org>
 
 Package: docker-registry
-Version: 0.1.1-4~trusty1
+Version: 0.1.1-5~trusty1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
-Installed-Size: 5362
+Installed-Size: 5369
 Depends: sysv-rc (>= 2.88dsf-24) | file-rc (>= 0.8.16)
 Homepage: http://docker.io
 Priority: extra
 Section: devel
-Filename: pool/main/d/docker-registry/docker-registry_0.1.1-4~trusty1_amd64.deb
-Size: 1030042
-SHA256: bf8eea2cf4cee0336c3ad4ebf1453483762c2c889721b70351b2748897ee46d8
-SHA1: 8f18a19ccb5737e468d532ad7f49eb34705ac158
-MD5sum: bc1c24dc1635a9d397c06f55c946307e
+Filename: pool/main/d/docker-registry/docker-registry_0.1.1-5~trusty1_amd64.deb
+Size: 1032196
+SHA256: bace2a302ee902828824c78e614ad799959c6b4c1f45f1155f3d44cfa1fb55f2
+SHA1: d761338bb31e70df88d2314c02bb73818f36a487
+MD5sum: 77ae4beec8a384d23d053ef2a784a31a
 Description: Go implementation of the Docker Registry.
  Docker registry stores Docker images.
 
@@ -1065,7 +1065,7 @@ Description: mongoapi is a MongoDB service API for the Tsuru PaaS
  Tsuru applications, implementing the service API for Tsuru.
 
 Package: tsuru-server
-Version: 0.6.0+1SNAPSHOT20140818085839+0000-1~trusty1
+Version: 0.6.0+1SNAPSHOT20140822102552+0000-1~trusty1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
 Installed-Size: 11445
@@ -1073,11 +1073,11 @@ Depends: sysv-rc (>= 2.88dsf-24) | file-rc (>= 0.8.16), libsqlite3-0, openssh-cl
 Homepage: http://tsuru.io
 Priority: extra
 Section: devel
-Filename: pool/main/t/tsuru-server/tsuru-server_0.6.0+1SNAPSHOT20140818085839+0000-1~trusty1_amd64.deb
-Size: 1948968
-SHA256: 422076b7d796ba4a296f63e724d06a71c8c85a055da88938c61ffb06546e4997
-SHA1: da6628fffc9e71011ac7a98018dd6ea1b868747c
-MD5sum: 36ac6bda2c115f2d39f491f51f5fad23
+Filename: pool/main/t/tsuru-server/tsuru-server_0.6.0+1SNAPSHOT20140822102552+0000-1~trusty1_amd64.deb
+Size: 1950062
+SHA256: 204d796b7b420c651f653b71d228611d982bc11a3100ee1033e120e466189c1d
+SHA1: b2de4d3326ae393599f23df0eb4e52330d65103b
+MD5sum: 3b1229e09df325e1d388d923caefcb18
 Description: tsuru-server is the server side of the Tsuru PaaS.
  This package includes two services: Tsuru API and Tsuru SSH agent. All jobs
  are disabled by default, to enable any of them, edit the file
