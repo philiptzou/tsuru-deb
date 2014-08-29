@@ -102,19 +102,19 @@ Description: Go implementation of the Docker Registry.
  Docker registry stores Docker images.
 
 Package: gandalf-server
-Version: 0.4.1+1SNAPSHOT20140818074629+0000-1~trusty1
+Version: 0.5.0-1~trusty1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
-Installed-Size: 12685
+Installed-Size: 12705
 Depends: sysv-rc (>= 2.88dsf-24) | file-rc (>= 0.8.16), git (>= 1:1.7.9.5~), git-daemon-sysvinit (>= 1:1.7.9.5~)
 Homepage: https://github.com/tsuru/gandalf
 Priority: extra
 Section: devel
-Filename: pool/main/g/gandalf-server/gandalf-server_0.4.1+1SNAPSHOT20140818074629+0000-1~trusty1_amd64.deb
-Size: 1754534
-SHA256: 55568035d729d94dcbaaec3b7b33a439975a7e589dee56b16cf9cfa5d887c6f1
-SHA1: c52f01f919582d97fa3115cc736e56d0180667a8
-MD5sum: 9b08bc4e25c50bd48571ffe5186e330c
+Filename: pool/main/g/gandalf-server/gandalf-server_0.5.0-1~trusty1_amd64.deb
+Size: 1757652
+SHA256: 425f9f08e5fc7a9e5a0732af5882f280a41aed05561e6a626f131fbf2c89bd5b
+SHA1: 23c4ff78cfbb8f107209d4dc6353fa82771fb80e
+MD5sum: 5af21fcc54b2c0a455cbc1d759dc5e96
 Description: Gandalf is a Git repositories manager.
  Gandalf manages Git access to repositories, by handling users, keys and
  repositories.
@@ -1065,19 +1065,19 @@ Description: mongoapi is a MongoDB service API for the Tsuru PaaS
  Tsuru applications, implementing the service API for Tsuru.
 
 Package: tsuru-server
-Version: 0.6.0+1SNAPSHOT20140822102552+0000-1~trusty1
+Version: 0.6.2.1-2~trusty1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
-Installed-Size: 11445
+Installed-Size: 11617
 Depends: sysv-rc (>= 2.88dsf-24) | file-rc (>= 0.8.16), libsqlite3-0, openssh-client
 Homepage: http://tsuru.io
 Priority: extra
 Section: devel
-Filename: pool/main/t/tsuru-server/tsuru-server_0.6.0+1SNAPSHOT20140822102552+0000-1~trusty1_amd64.deb
-Size: 1950062
-SHA256: 204d796b7b420c651f653b71d228611d982bc11a3100ee1033e120e466189c1d
-SHA1: b2de4d3326ae393599f23df0eb4e52330d65103b
-MD5sum: 3b1229e09df325e1d388d923caefcb18
+Filename: pool/main/t/tsuru-server/tsuru-server_0.6.2.1-2~trusty1_amd64.deb
+Size: 1976780
+SHA256: 52dfa170c551a201718e2df823b4260a79d936e7f154d0efd5ec6f737e75ff8c
+SHA1: 8656e56c9c5b8f090b9d5b2783ee844924cec20b
+MD5sum: 6a7339da50cd98b11e5a4e17bfb55439
 Description: tsuru-server is the server side of the Tsuru PaaS.
  This package includes two services: Tsuru API and Tsuru SSH agent. All jobs
  are disabled by default, to enable any of them, edit the file
