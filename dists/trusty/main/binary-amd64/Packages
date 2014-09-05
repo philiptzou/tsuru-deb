@@ -1031,18 +1031,19 @@ Description: tsuru-admin is the command line interface used by cloud admins
  the client used by cloud administrators to communicate with tsuru server.
 
 Package: tsuru-client
-Version: 0.11.0-2~trusty1
+Version: 0.11.1-2~trusty1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
 Installed-Size: 6725
+Replaces: tsuru
 Homepage: http://tsuru.io
 Priority: extra
 Section: devel
-Filename: pool/main/t/tsuru-client/tsuru-client_0.11.0-2~trusty1_amd64.deb
-Size: 1232500
-SHA256: 887607ee91248c4b8962e62e2b497790806618bda21d9d65231d06709d0004c7
-SHA1: 19460ff38928b47fe3cad94d8dc88ea71414edae
-MD5sum: 9944a9b4fb7a66ecea177fc3e4e883fb
+Filename: pool/main/t/tsuru-client/tsuru-client_0.11.1-2~trusty1_amd64.deb
+Size: 1232496
+SHA256: 650340baba552873bad233bccddbe07a4defbaf8e0a5dce806b3f01ff38caff5
+SHA1: 445ffd052739aef71941372cacc5db80a055e6f4
+MD5sum: de1cdbf0ffbe3cbdaee091f2915cea70
 Description: tsuru is the command line interface for the tsuru server
  Tsuru is an open source platform as a service software. This package installs
  the client used by application developers to communicate with tsuru server.
