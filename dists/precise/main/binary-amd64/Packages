@@ -1078,36 +1078,36 @@ Description: Serf is a decentralized solution for service discovery and orchestr
  completely masterless with no single point of failure.
 
 Package: tsuru-admin
-Version: 0.5.1+1SNAPSHOT20140818085231+0000-1~precise1
+Version: 0.6.0-1~precise1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
-Installed-Size: 11149
+Installed-Size: 10997
 Homepage: http://tsuru.io
 Priority: extra
 Section: devel
-Filename: pool/main/t/tsuru-admin/tsuru-admin_0.5.1+1SNAPSHOT20140818085231+0000-1~precise1_amd64.deb
-Size: 2683008
-SHA256: b8d2941e47ca05ef222fbef395779b46070a7a1aaf62f6902f0fcc7ae693b3f3
-SHA1: c4f3e0440d9da898a39c82808c374f4b5941dfbd
-MD5sum: 3baacf64b85aac571e61ce046eedc5ae
+Filename: pool/main/t/tsuru-admin/tsuru-admin_0.6.0-1~precise1_amd64.deb
+Size: 2646204
+SHA256: 2899ba338cf218c99d390c99954f0189d6e0b8f196b9fe71e72984541ae1d191
+SHA1: 935d35e908a54a5e058c800e96e8a793c43623ad
+MD5sum: c882c501f0dc7e5f4cad19f242e1a434
 Description: tsuru-admin is the command line interface used by cloud admins
  Tsuru is an open source platform as a service software. This package installs
  the client used by cloud administrators to communicate with tsuru server.
 
 Package: tsuru-client
-Version: 0.11.2-2~precise1
+Version: 0.12.0-1~precise1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
-Installed-Size: 6725
+Installed-Size: 8369
 Replaces: tsuru
 Homepage: http://tsuru.io
 Priority: extra
 Section: devel
-Filename: pool/main/t/tsuru-client/tsuru-client_0.11.2-2~precise1_amd64.deb
-Size: 1711322
-SHA256: b4526a544fdea690a3c704e023ecf493c0953c315369680c9ba1cddbec9bfc06
-SHA1: e64a04559feb51c4c5454756a73fd04d4e29b812
-MD5sum: 02465e1d0a62f49be6e7565eaacfd1eb
+Filename: pool/main/t/tsuru-client/tsuru-client_0.12.0-1~precise1_amd64.deb
+Size: 2094474
+SHA256: 244707c319b31ed5b620b8ef5abda9069db8a2673bb5d2dfa7f6985abec0cbad
+SHA1: e05df350cb1044850ff914802ba216a96a1e9b5f
+MD5sum: d694d779b613e129af7e1b0884845022
 Description: tsuru is the command line interface for the tsuru server
  Tsuru is an open source platform as a service software. This package installs
  the client used by application developers to communicate with tsuru server.
@@ -1130,19 +1130,19 @@ Description: mongoapi is a MongoDB service API for the Tsuru PaaS
  Tsuru applications, implementing the service API for Tsuru.
 
 Package: tsuru-server
-Version: 0.6.2.1-2~precise1
+Version: 0.7.2-0~precise1
 Architecture: amd64
 Maintainer: Globo.com <tsuru@corp.globo.com>
-Installed-Size: 11612
-Depends: upstart-job, libsqlite3-0, openssh-client
+Installed-Size: 11542
+Depends: upstart-job, libsqlite3-0
 Homepage: http://tsuru.io
 Priority: extra
 Section: devel
-Filename: pool/main/t/tsuru-server/tsuru-server_0.6.2.1-2~precise1_amd64.deb
-Size: 2785446
-SHA256: 3a4478c5340d3409a99458c62db7332f1c3de5845ec998cb4ca3b32562884ce2
-SHA1: 1ec66358091724edcdb4e3fe433b7891347ef173
-MD5sum: de2a099a1d7c82b0b031696b43462409
+Filename: pool/main/t/tsuru-server/tsuru-server_0.7.2-0~precise1_amd64.deb
+Size: 2771858
+SHA256: d4ac1eb77b5f02434204cf73fcbeff352f993e6487bd9b402f36e0924c42da9e
+SHA1: 31af3259b5572e9b2be0aebcfbaf713b37f81746
+MD5sum: 35b42ccfd6fcfb5e3260d496c1571dfa
 Description: tsuru-server is the server side of the Tsuru PaaS.
  This package includes two services: Tsuru API and Tsuru SSH agent. All jobs
  are disabled by default, to enable any of them, edit the file
